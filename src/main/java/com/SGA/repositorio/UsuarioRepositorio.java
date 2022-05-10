@@ -5,7 +5,6 @@ import java.util.Optional;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
-import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
 import com.SGA.entidades.Usuario;
@@ -15,6 +14,9 @@ import com.SGA.entidades.Usuario;
 public interface UsuarioRepositorio extends JpaRepository<Usuario, Long>{
 	 
 	public Optional<Usuario> findByEmail(String email);
+
+//	public Optional<Usuario> findById(Long id);
+
 	 
 	public Optional<Usuario> findByUsernameOrEmail (String username, String email);
 	
@@ -33,5 +35,8 @@ public interface UsuarioRepositorio extends JpaRepository<Usuario, Long>{
 			+ " FROM Usuario m "
 			+ "WHERE m.username =?1 and m.password=?1")
 	Optional<Usuario> findByUsernameAndPassword(String username, String password);
-	
+
+
+
+
 }

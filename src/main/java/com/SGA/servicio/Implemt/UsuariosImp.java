@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class UsuariosImp implements UsuarioService {
@@ -45,6 +46,7 @@ public class UsuariosImp implements UsuarioService {
     public Usuario ChangePassword(UsuarioDto usuarioDto) throws Exception {
         Usuario usuario = usuarioRepositorio.findById(usuarioDto.getId()).orElseThrow(() -> new Exception("Usuario no encontrado en Cambiar contraseña -"+this.getClass().getName()));
 
+
         if (usuarioDto.getCurrentPassword().equals(usuario.getPassword())){
             throw new Exception("Contraseña actual incorrecta");
         }
@@ -60,4 +62,15 @@ public class UsuariosImp implements UsuarioService {
         usuario.setPassword(usuarioDto.getNewPassword());
         return usuarioRepositorio.save(usuario);
     }
+
+//    @Override
+//    public Usuario confirmaPassword(Long id) throws Exception {
+//        Usuario usuario = usuarioRepositorio.findById();
+//
+//        if (usuario.getPassword().equals(usuario.getConfirmPassword()))
+//        {
+//            throw new Exception("La contraseñas es incorrecta");
+//        }
+//        return null;
+//    }
 }

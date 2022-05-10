@@ -96,4 +96,5 @@ public class Usuario {
         return Objects.hash(id, username, email, password, confirmPassword, roles, unaPersona);
     }
 
+
 }

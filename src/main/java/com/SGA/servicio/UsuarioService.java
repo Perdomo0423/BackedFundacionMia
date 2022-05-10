@@ -22,4 +22,6 @@ public interface UsuarioService {
 
     public Usuario ChangePassword (UsuarioDto usuarioDto) throws Exception;
 
+//    public Usuario confirmaPassword(Long id) throws Exception;
+
 }
