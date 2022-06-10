@@ -24,20 +24,27 @@ public class JwtTokenProvider {
 	
 	@Value("${app.jwt-expiration-milliseconds}")
 	private int jwtExpirationInMs;
-	
-	//Este token lo que hace es establecer el usuario
+
 	public String generarToken(Authentication authentication) {
-		String username = authentication.getName(); //Obtenemos el username del usuario de autenticación
-		Date fechaActual = new Date(); //obtenemos la fecha actual 
-		Date fechaExpiracion = new Date(fechaActual.getTime()+jwtExpirationInMs); //Aqui obtenemos la fecha de expiracion haciendo la sumatoria de fechaActual + timpoExpiracion
-		String token = Jwts.builder().setSubject(username).setIssuedAt(new Date()).setExpiration(fechaExpiracion) //(Establece el usuario) Aquí asigamos todos estos datos al token y genera el token con su algorimo y llave secreta
-				.signWith(SignatureAlgorithm.HS512, jwtSecret).compact();
+		String username = authentication.getName();
+		Date fechaActual = new Date();
+		Date fechaExpiracion = new Date(fechaActual.getTime() + jwtExpirationInMs);
+		String token = Jwts
+				.builder()
+				.setSubject(username)
+				.setIssuedAt(new Date())
+				.setExpiration(fechaExpiracion)
+				.signWith(SignatureAlgorithm.HS512, jwtSecret)
+				.compact();
 		return token;
 	}
-	
-	//Este token obtiene el usuario
+
 	public String obtenerUsernameDelJWT(String token) {
-		Claims claims = Jwts.parser().setSigningKey(jwtSecret).parseClaimsJws(token).getBody();
+		Claims claims = Jwts
+				.parser()
+				.setSigningKey(jwtSecret)
+				.parseClaimsJws(token)
+				.getBody();
 		return claims.getSubject();
 	}
 	
@@ -47,18 +54,18 @@ public class JwtTokenProvider {
 			return true;
 		} catch (SignatureException ex) {
 			throw new BlogAppException(HttpStatus.BAD_REQUEST, "Firma JWT no vlaida");
-		}
-		 catch (MalformedJwtException ex) {
-				throw new BlogAppException(HttpStatus.BAD_REQUEST, "Token JWT no valida");
-			}
-		catch (ExpiredJwtException ex) {
+		} catch (MalformedJwtException ex) {
+			throw new BlogAppException(HttpStatus.BAD_REQUEST, "Token JWT no valida");
+		} catch (ExpiredJwtException ex) {
 			throw new BlogAppException(HttpStatus.BAD_REQUEST, "Token JWT caducado");
-		}
-		catch (UnsupportedJwtException ex) {
+		} catch (UnsupportedJwtException ex) {
 			throw new BlogAppException(HttpStatus.BAD_REQUEST, "Token JWT no compatible");
-		}
-		catch (IllegalArgumentException ex) {
+		} catch (IllegalArgumentException ex) {
 			throw new BlogAppException(HttpStatus.BAD_REQUEST, "La cadena claims JWT esta vacia");
 		}
+	}
+
+	public void removeToken() {
+		Jwts.claims().clear();
 	}
 }

@@ -13,8 +13,13 @@ import javax.persistence.*;
 @Getter
 @Setter
 @Entity
-@Table(name = "usuarios", uniqueConstraints = { @UniqueConstraint(columnNames = { "username" }),
-		@UniqueConstraint(columnNames = { "email" }) })
+@Table(
+        name = "usuarios",
+        uniqueConstraints = {
+                @UniqueConstraint(columnNames = { "username" }),
+		        @UniqueConstraint(columnNames = { "email" })
+        }
+)
 public class Usuario {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -32,17 +37,17 @@ public class Usuario {
     @Transient
     private String confirmPassword;
 
-
-
-	@ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL) // EAGER PORQUE SIEMPRE VA A ESTAR ANSIOSA, NO SERA
-																	// UNA CARGA PEREZOSA
-	@JoinTable(name = "usuario_roles", joinColumns = @JoinColumn(name = "usuario_id", referencedColumnName = "id"), inverseJoinColumns = @JoinColumn(name = "rol_id", referencedColumnName = "id"))
+	@ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+	@JoinTable(
+            name = "usuario_roles",
+            joinColumns = @JoinColumn(name = "usuario_id", referencedColumnName = "id"),
+            inverseJoinColumns = @JoinColumn(name = "rol_id", referencedColumnName = "id")
+    )
 	private Set<Rol> roles = new HashSet<>();
 	
 	@OneToOne(cascade = {CascadeType.ALL})
 	@JoinColumn(name="id_Persona")
 	private Persona unaPersona;
-	
 
     public void genearPassword(){
         String minusculas= "abcdefghijklmnopqrstuvwxyz";
@@ -65,10 +70,6 @@ public class Usuario {
         
         this.password=passwordGenerado;
     }
-	public Usuario() {
-		super();
-	}
-
 
     @Override
     public String toString() {
@@ -95,6 +96,4 @@ public class Usuario {
     public int hashCode() {
         return Objects.hash(id, username, email, password, confirmPassword, roles, unaPersona);
     }
-
-
 }

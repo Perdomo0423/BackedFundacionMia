@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Optional;
 
 
+import com.SGA.dto.StandarEstudianteDto;
 import org.springframework.stereotype.Service;
 
 import com.SGA.entidades.Estudiante;
@@ -16,7 +17,7 @@ public interface EstudianteService{
 	public Optional<Estudiante> findById(Long id); //Que nos encuentre la persona por medio del id
 	
 	
-	public Estudiante save(Estudiante estudiante);//actualizar entidad o guardarla, le pasamos una persona y va a guardar una persona
+	public Estudiante guardar(StandarEstudianteDto estudiante);//actualizar entidad o guardarla, le pasamos una persona y va a guardar una persona
 	
 	public void deleteById(Long id); //Elimina un Estudiante por id, el metodo es void significa que no devuelve nada
 

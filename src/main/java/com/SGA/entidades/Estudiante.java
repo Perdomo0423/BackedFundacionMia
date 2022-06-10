@@ -80,7 +80,6 @@ public class Estudiante implements Serializable {
     @DateTimeFormat(pattern = "yyyy-mm-dd")
     private Date fechaCreacion;
 
-
     @ManyToOne
     @JoinColumn(name = "idInstitucion")
     private Institucion unaInstitucion;
@@ -93,11 +92,9 @@ public class Estudiante implements Serializable {
     @JoinColumn(name = "idMunicipio")
     private Municipio unMunicipio;
 
-
     @ManyToOne
     @JoinColumn(name = "idTipoDocumento")
     private TipoDocumento unTipoDocumento;
-
 
     @ManyToOne
     @JoinColumn(name = "idTipoDiscapacidad")
@@ -114,7 +111,6 @@ public class Estudiante implements Serializable {
     @Column(name = "estGrado")
     private String grado;
 
-
     @ManyToOne
     @JoinColumn(name = "idPais")
     private Pais paisOrigen;
@@ -122,6 +118,4 @@ public class Estudiante implements Serializable {
     @ManyToOne
     @JoinColumn(name = "idDirector")
     private Usuario director;
-
-
 }

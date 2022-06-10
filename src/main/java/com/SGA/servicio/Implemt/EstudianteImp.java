@@ -1,30 +1,31 @@
 package com.SGA.servicio.Implemt;
 
-
+import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 
+import com.SGA.dto.StandarEstudianteDto;
 import com.SGA.servicio.EstudianteService;
+import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.SGA.entidades.Estudiante;
 import com.SGA.repositorio.EstudianteRepository;
- 
 
 @Service
 public  class EstudianteImp implements EstudianteService {
+	@Autowired
+	private EstudianteRepository estudianteRepository;
 
 	@Autowired
-	private EstudianteRepository estudianteRepository; //Intanciamos la clase para poder usar todos los metodos que estan la clase repositorio
-
+	private ModelMapper mapper;
 
 	@Override
-	@Transactional(readOnly = true) //Una transaccion de solo lectura la cual no va a cambiar el estado de nuestra base de datos
+	@Transactional(readOnly = true)
 	public Iterable<Estudiante> findAll() {
-		
-		return estudianteRepository.findAll(); //Usamos el metodo de la clase instanciada para poder listar todos los usuarios 
+		return estudianteRepository.findAll();
 	}
 	
 	@Override
@@ -34,9 +35,10 @@ public  class EstudianteImp implements EstudianteService {
 	}
 
 	@Override
-	@Transactional(readOnly = false) //Una transaccion de  la cual va a cambiar el estado de nuestra base de datos va a crear o actualizar nuestra base de datos
-	public Estudiante save(Estudiante estudiante) {
-		return estudianteRepository.save(estudiante);
+	@Transactional(readOnly = false)
+	public Estudiante guardar(StandarEstudianteDto estudiante) {
+		estudiante.setFechaCreacion(new Date());
+		return estudianteRepository.save(mapper.map(estudiante, Estudiante.class));
 	}
 
 	@Override

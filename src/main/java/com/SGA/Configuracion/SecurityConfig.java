@@ -20,6 +20,7 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 import com.SGA.seguridad.CustomUserDetailsService;
 import com.SGA.seguridad.JwtAuthenticationEntryPoint;
 import com.SGA.seguridad.JwtAuthenticationFilter;
+import org.springframework.web.servlet.config.annotation.CorsRegistry;
 
 @Configuration
 @EnableWebSecurity
@@ -43,45 +44,47 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
 	@Override
 	protected void configure(HttpSecurity http) throws Exception{
 		
-		http.csrf().disable() // CSRF: Es un tipo de sploit malicioso de un sitio web. se usa para falsificación de petición de sitios cruzados
-		.exceptionHandling()
-		.authenticationEntryPoint(jwtAuthenticationEntryPoint)
-		.and()
-		.sessionManagement()
-		.sessionCreationPolicy(SessionCreationPolicy.STATELESS)
-		.and()
-		.authorizeHttpRequests().antMatchers(HttpMethod.GET,"/api/**") //cuando se hace una peticion web, esta ruta puede ser para cualquiera
-			.permitAll()
-			//.antMatchers("/api/auth/**").permitAll()// significa que despues de autenticado tendre todos los permisos
-			.antMatchers("/api/auth/**").permitAll()
-			.antMatchers("/v2/api-docs/**").permitAll()
-			.antMatchers("/api/**").permitAll()
-			.antMatchers("/**").permitAll()
-			.anyRequest() //de aquí para abajo significa que cualquier otra petición se va a autenticary va ser a ser una httpBasic
-			.authenticated() ;
+		http
+				.csrf()
+				.disable()
+				.exceptionHandling()
+				.authenticationEntryPoint(jwtAuthenticationEntryPoint)
+				.and()
+				.sessionManagement()
+				.sessionCreationPolicy(SessionCreationPolicy.STATELESS)
+				.and()
+				.authorizeHttpRequests().antMatchers(HttpMethod.GET,"/api/**")
+				.permitAll()
+				.antMatchers("/api/auth/**").permitAll()
+				.antMatchers("/v2/api-docs/**").permitAll()
+				.antMatchers("/api/**").permitAll()
+				.antMatchers("/**").permitAll()
+				.anyRequest()
+				.authenticated() ;
 		http.addFilterBefore(jwtAuthenticationFilter(), UsernamePasswordAuthenticationFilter.class);
 	
 	}
-	  @Override
-	    public void configure(WebSecurity web) throws Exception {
-	        web.ignoring().antMatchers("/v2/api-docs",
-	                                   "/configuration/ui",
-	                                   "/swagger-resources/**",
-	                                   "/configuration/security",
-	                                   "/swagger-ui.html",
-	                                   "/webjars/**");
-	    }
+
+	@Override
+	public void configure(WebSecurity web) throws Exception {
+		web.ignoring().antMatchers(
+				"/v2/api-docs",
+						    "/configuration/ui",
+						    "/swagger-resources/**",
+						    "/configuration/security",
+						    "/swagger-ui.html",
+						    "/webjars/**"
+		);
+	}
+
 	@Override
 	protected void configure(AuthenticationManagerBuilder auth) throws Exception {
 		auth.userDetailsService(userDetailsService).passwordEncoder(passwordeEncoder());
-		
 	}
 	
 	@Override
 	@Bean
 	public AuthenticationManager authenticationManagerBean() throws Exception {
-		
 		return super.authenticationManagerBean();
 	}
-
 }
