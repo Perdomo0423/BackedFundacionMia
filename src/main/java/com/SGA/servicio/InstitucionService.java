@@ -6,8 +6,6 @@ import org.springframework.stereotype.Repository;
 
 import com.SGA.entidades.Institucion;
 
- 
-
 @Repository
 public interface InstitucionService{ 
 	public Iterable<Institucion> findAll();

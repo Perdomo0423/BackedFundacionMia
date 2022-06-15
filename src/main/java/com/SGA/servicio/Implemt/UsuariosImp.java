@@ -54,13 +54,12 @@ public class UsuariosImp implements UsuarioService {
     public HttpStatus updatePassword(UsuarioDto usuario) {
         HttpStatus httpStatus;
         try{
-            if (!usuario.getNewPassword().equals(usuario.getConfirmPassword())){
+            if (!usuario.getNewPassword().equals(usuario.getConfirmPassword()))
                 throw new Exception("¡La nueva contraseña y Confirmar contraseña no coinciden!");
-            }
 
-            if (usuario.getCurrentPassword().equals(usuario.getNewPassword())){
+            if (usuario.getCurrentPassword().equals(usuario.getNewPassword()))
                 throw new Exception("¡La nueva contraseña debe ser diferente a la contraseña actual!");
-            }
+
 
             Usuario currentUser = usuarioRepositorio.findById(usuario.getId())
                     .orElseThrow(() -> new Exception("Usuario no encontrado"));
@@ -70,7 +69,8 @@ public class UsuariosImp implements UsuarioService {
                 currentUser.setPassword(passwordEncoder.encode(usuario.getNewPassword()));
                 usuarioRepositorio.save(currentUser);
                 httpStatus = HttpStatus.OK;
-            } else httpStatus = HttpStatus.BAD_REQUEST;
+            } else
+                throw new Exception("¡La contraseña actual no coincide!");
 
         } catch (Exception exception) {
             System.out.println(exception);
