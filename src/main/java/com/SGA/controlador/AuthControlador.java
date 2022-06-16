@@ -27,7 +27,7 @@ import com.SGA.entidades.Rol;
 import com.SGA.entidades.TipoDocumento;
 import com.SGA.entidades.Usuario;
 import com.SGA.repositorio.MunicipioRepository;
-import com.SGA.repositorio.RolRepositorio;
+import com.SGA.repositorio.RolRepository;
 import com.SGA.repositorio.UsuarioRepositorio;
 import com.SGA.seguridad.JWTAuthResponseDto;
 import com.SGA.seguridad.JwtTokenProvider;
@@ -42,7 +42,7 @@ public class AuthControlador {
 	@Autowired
 	private UsuarioRepositorio usuarioRepositorio;
 	@Autowired
-	private RolRepositorio rolRepositorio;
+	private RolRepository rolRepository;
 	@Autowired
 	private PasswordEncoder passwordEncoder;
 	@Autowired
@@ -94,7 +94,7 @@ public class AuthControlador {
 		String contraseña =usuario.getPassword();
 		usuario.setPassword(passwordEncoder.encode(usuario.getPassword()));
 		//Rol roles = rolRepositorio.findByNombre("ROLE_ADMIN").get();
-		Optional<Rol> roles = rolRepositorio.findById(registroDto.getUnRol().getId());
+		Optional<Rol> roles = rolRepository.findById(registroDto.getUnRol().getId());
 		usuario.setRoles(Collections.singleton(roles.get()));
 		usuarioRepositorio.save(usuario);
 		enviarNuevoPasswordCorreoElectronico(usuario,contraseña);

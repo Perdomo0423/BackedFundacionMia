@@ -118,4 +118,9 @@ public class Estudiante implements Serializable {
     @ManyToOne
     @JoinColumn(name = "idDirector")
     private Usuario director;
+    
+    @ManyToOne
+    @JoinColumn(name = "idBeneficio")
+    private TipoBeneficio unbeneficio;
+
 }

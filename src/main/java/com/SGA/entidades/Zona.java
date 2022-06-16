@@ -19,8 +19,8 @@ import javax.persistence.Table;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@Table(name="roles")
-public class Rol implements Serializable{
+@Table(name="zonas")
+public class Zona implements Serializable{
 	private static final long serialVersionUID = 1L;
 	
 	@Id
