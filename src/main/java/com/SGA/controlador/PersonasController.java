@@ -1,9 +1,12 @@
 package com.SGA.controlador;
 
 
+import com.SGA.entidades.Contratista;
 import com.SGA.entidades.Persona;
 import com.SGA.entidades.Usuario;
 import com.SGA.servicio.PersonaService1;
+import com.SGA.servicio.PersonaService;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -11,6 +14,7 @@ import org.springframework.web.bind.annotation.*;
 
 
 import java.util.Date;
+import java.util.List;
 
 @RestController
 @RequestMapping("/api/persona")
@@ -18,6 +22,14 @@ public class PersonasController {
 
     @Autowired
     private PersonaService1 personaservice1;
+    
+    @Autowired
+    private PersonaService personaservice;
+    
+	@GetMapping("listar")
+	public List<Persona> all() {
+		return personaservice.all();
+	}
 
     @GetMapping("/listar/{id}")
     public ResponseEntity<Persona> obtenerPersona (@PathVariable Long id){
@@ -40,6 +52,7 @@ public class PersonasController {
              personaservice1.guardarPersona(personaExistente);
              return new ResponseEntity<Persona>(HttpStatus.OK);
 
+             
          }catch (Exception e){
              return new ResponseEntity<Persona>(HttpStatus.NOT_FOUND);
 

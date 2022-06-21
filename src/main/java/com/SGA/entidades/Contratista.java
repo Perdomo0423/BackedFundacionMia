@@ -1,18 +1,16 @@
 package com.SGA.entidades;
 
 import java.io.Serializable;
-import java.sql.Date;
-import java.util.Set;
+import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+
 
 import lombok.Getter;
 import lombok.Setter;
@@ -32,7 +30,10 @@ public class Contratista implements Serializable {
 	@ManyToOne(fetch = FetchType.EAGER, optional = false)
 	@JoinColumn(name = "id_zona", nullable = false)
 	private Zona idZona;
-
+	
+	
+	@Column(name = "nombre_zona", length = 30, nullable = false)
+	private String nombreZona;
 	
 	@Column(name = "representante_legal", length = 30, nullable = false)
 	private String representanteLegal;
@@ -43,15 +44,24 @@ public class Contratista implements Serializable {
 	@Column(name = "numero_contrato", length = 30, nullable = false)
 	private int numeroContrato;
 	
-	@Column(name = "fecha_suscripcion", length = 30, nullable = false)
-	private Date fechaSuscripcion;
 	
-	@Column(name = "fecha_inicio", length = 30, nullable = false)
+	
+	
+	@Column(name = "fecha_inicio",  length = 20, nullable = false)
 	private Date fechaInicio;
 	
+	@Column(name = "fecha_suscripcion",  length = 20, nullable = false)
+	private Date fechaSuscripcion;
+	
+//	@Column(name = "fecha_suscripcion", length = 30, nullable = false)
+//	private Date fechaSuscripcion;
+//	
+//	@Column(name = "fecha_inicio", length = 30, nullable = false)
+//	private Date fechaInicio;
+//	
 	@Column(name = "cantidad_complemento", length = 30, nullable = false)
 	private int cantidadComplemento;
-	
+	 
 	@Column(name = "costo_complemento", length = 30, nullable = false)
 	private int costoComplemento;
 	
@@ -66,5 +76,8 @@ public class Contratista implements Serializable {
 	
 	@Column(name = "dias_atender", length = 30, nullable = false)
 	private int diasAtender;
+	
+	
+	
 	
 }

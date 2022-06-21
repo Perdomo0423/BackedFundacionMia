@@ -34,15 +34,12 @@ public class Usuario {
     @Column
 	private String password;
 
+    
     @Transient
     private String confirmPassword;
 
-	@ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
-	@JoinTable(
-            name = "usuario_roles",
-            joinColumns = @JoinColumn(name = "usuario_id", referencedColumnName = "id"),
-            inverseJoinColumns = @JoinColumn(name = "rol_id", referencedColumnName = "id")
-    )
+    @ManyToMany
+
 	private Set<Rol> roles = new HashSet<>();
 	
 	@OneToOne(cascade = {CascadeType.ALL})
@@ -92,6 +89,7 @@ public class Usuario {
         return id.equals(usuario.id) && username.equals(usuario.username) && email.equals(usuario.email) && password.equals(usuario.password) && confirmPassword.equals(usuario.confirmPassword) && roles.equals(usuario.roles) && unaPersona.equals(usuario.unaPersona);
     }
 
+    
     @Override
     public int hashCode() {
         return Objects.hash(id, username, email, password, confirmPassword, roles, unaPersona);

@@ -115,7 +115,7 @@ public class EstPdfExportar {
 				jornadaCell.setBorder(0);
 				table.addCell(jornadaCell);
 				
-				PdfPCell tipoAlimentacionCell = new PdfPCell(new Phrase(String.valueOf(customer.getUnbeneficio().getNombre())));
+				PdfPCell tipoAlimentacionCell = new PdfPCell(new Phrase(String.valueOf(customer.getIdBeneficio().getNombre())));
 				tipoAlimentacionCell.setPaddingLeft(4);
 				tipoAlimentacionCell.setVerticalAlignment(Element.ALIGN_MIDDLE);
 				tipoAlimentacionCell.setHorizontalAlignment(Element.ALIGN_CENTER);
