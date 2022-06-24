@@ -48,17 +48,11 @@ public class Contratista implements Serializable {
 	
 	
 	@Column(name = "fecha_inicio",  length = 20, nullable = false)
-	private Date fechaInicio;
+	private String fechaInicio;
 	
 	@Column(name = "fecha_suscripcion",  length = 20, nullable = false)
-	private Date fechaSuscripcion;
+	private String fechaSuscripcion;
 	
-//	@Column(name = "fecha_suscripcion", length = 30, nullable = false)
-//	private Date fechaSuscripcion;
-//	
-//	@Column(name = "fecha_inicio", length = 30, nullable = false)
-//	private Date fechaInicio;
-//	
 	@Column(name = "cantidad_complemento", length = 30, nullable = false)
 	private int cantidadComplemento;
 	 
@@ -77,6 +71,9 @@ public class Contratista implements Serializable {
 	@Column(name = "dias_atender", length = 30, nullable = false)
 	private int diasAtender;
 	
+	@ManyToOne(fetch = FetchType.EAGER, optional = false)
+	@JoinColumn(name = "id_persona", nullable = false)
+	private Persona idPersona;
 	
 	
 	

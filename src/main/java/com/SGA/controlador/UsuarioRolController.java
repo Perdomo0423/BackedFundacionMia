@@ -34,38 +34,5 @@ public class UsuarioRolController{
 		return service.all();
 	}
 
-//	@GetMapping("listar/{id}")
-//	public Optional<UsuarioRol> show(@PathVariable Long id) {
-//		return service.findById(id);
-//	}
-
-//	@PostMapping("guardar")
-//	@ResponseStatus(code = HttpStatus.CREATED)
-//	public Contratista save(@RequestBody Contratista contratista) {
-//		return service.save(contratista);
-//	}
-//	
-//	
-//	@PutMapping("actualizar/{nit}")
-//	@ResponseStatus(code = HttpStatus.CREATED)
-//	public Contratista update(@PathVariable Long nit, @RequestBody Contratista contratista) {	
-//		Optional<Contratista> op = service.findById(nit);
-//		
-//		Contratista ContratistasUpdate = new Contratista();
-//		if (!op.isEmpty()) {			
-//			ContratistasUpdate = op.get();					
-//			ContratistasUpdate= contratista;			
-//			ContratistasUpdate.setNit(nit);
-//			
-//		}
-//		return service.save(ContratistasUpdate);
-//				
-//	}
-//	
-//	@DeleteMapping("eliminar/{nit}")
-//	@ResponseStatus(code = HttpStatus.NO_CONTENT)
-//	public void delete(@PathVariable Long nit) {
-//		service.delete(nit);
-//	}
 	
 }

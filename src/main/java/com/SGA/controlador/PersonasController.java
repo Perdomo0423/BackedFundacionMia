@@ -1,11 +1,11 @@
 package com.SGA.controlador;
 
 
-import com.SGA.entidades.Contratista;
+
 import com.SGA.entidades.Persona;
-import com.SGA.entidades.Usuario;
+
 import com.SGA.servicio.PersonaService1;
-import com.SGA.servicio.PersonaService;
+import com.SGA.servicio.*;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -26,10 +26,15 @@ public class PersonasController {
     @Autowired
     private PersonaService personaservice;
     
+    @Autowired
+    private UsuarioService usuarioservice;
+    
 	@GetMapping("listar")
 	public List<Persona> all() {
 		return personaservice.all();
 	}
+	
+	
 
     @GetMapping("/listar/{id}")
     public ResponseEntity<Persona> obtenerPersona (@PathVariable Long id){

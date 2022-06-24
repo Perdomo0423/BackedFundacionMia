@@ -2,6 +2,7 @@ package com.SGA.servicio.Implemt;
 
 import com.SGA.dto.StandarUserDto;
 import com.SGA.dto.UsuarioDto;
+import com.SGA.entidades.Contratista;
 import com.SGA.entidades.Usuario;
 import com.SGA.repositorio.UsuarioRepositorio;
 import com.SGA.servicio.UsuarioService;
@@ -25,10 +26,10 @@ public class UsuariosImp implements UsuarioService {
     @Autowired
     private ModelMapper mapper;
 
-    @Override
-    public List<StandarUserDto> obtenerUsuarios() {
-        return mapper.map(usuarioRepositorio.findAll(), new TypeToken<List<StandarUserDto>>(){}.getType());
-    }
+//    @Override
+//    public List<StandarUserDto> obtenerUsuarios() {
+//        return mapper.map(usuarioRepositorio.findAll(), new TypeToken<List<StandarUserDto>>(){}.getType());
+//    }
 
     @Override
     public Usuario obtenerUsuarioPorId(Long id) {
@@ -44,12 +45,18 @@ public class UsuariosImp implements UsuarioService {
     public void guardarUsuario(Usuario usuario) {
        usuarioRepositorio.save(usuario);
     }
+    
+    @Override
+	public List<Usuario> all() {		
+		return this.usuarioRepositorio.findAll();
+	}
 
     @Override
-    public Usuario save(Usuario usuario) {
-        return usuarioRepositorio.save(usuario);
+    public Usuario save(Usuario usu) {
+        return usuarioRepositorio.save(usu);
     }
 
+    
     @Override
     public HttpStatus updatePassword(UsuarioDto usuario) {
         HttpStatus httpStatus;
@@ -78,4 +85,10 @@ public class UsuariosImp implements UsuarioService {
         }
         return httpStatus;
     }
+
+	@Override
+	public List<StandarUserDto> obtenerUsuarios() {
+		// TODO Auto-generated method stub
+		return null;
+	}
 }

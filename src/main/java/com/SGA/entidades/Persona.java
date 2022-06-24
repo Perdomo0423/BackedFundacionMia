@@ -41,9 +41,15 @@ public class Persona implements Serializable {
 	@Column(name="idPersona")
 	private Long idPersona;
 
-	@ManyToOne()
-	@JoinColumn(name="idTipoDumento")
+
+	
+	
+	
+	@ManyToOne(fetch = FetchType.EAGER, optional = false)
+	@JoinColumn(name = "id_tipo_dumento", nullable = false)
 	private TipoDocumento unTipoDocumento;
+	
+	
 	@NotEmpty(message="El campo no debe ser vacio")
 	@Size(max=50, message = "El campo debe tener un maximo de 10 caracteres")
 

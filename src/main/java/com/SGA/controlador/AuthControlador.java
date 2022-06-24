@@ -62,7 +62,7 @@ public class AuthControlador {
 		return  authService.authenticateUser(login);
 	}
 
-	@PostMapping("registrar")
+	@PostMapping("registrar") 
 	public ResponseEntity<?> registrarUsuario(@RequestBody RegistroDto registroDto){
 		if(usuarioRepositorio.existsByUsername(registroDto.getUsername())){
 			return new ResponseEntity<>("Ese nombre de usuario ya existe", HttpStatus.BAD_REQUEST);

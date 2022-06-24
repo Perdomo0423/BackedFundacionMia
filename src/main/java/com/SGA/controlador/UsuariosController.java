@@ -3,11 +3,13 @@ package com.SGA.controlador;
 import com.SGA.dto.LoginDto;
 import com.SGA.dto.StandarUserDto;
 import com.SGA.dto.UsuarioDto;
+import com.SGA.entidades.Contratista;
 import com.SGA.entidades.Usuario;
 import com.SGA.excepciones.MensajeError;
 import com.SGA.repositorio.UsuarioRepositorio;
 import com.SGA.seguridad.JWTAuthResponseDto;
 import com.SGA.seguridad.JwtTokenProvider;
+import com.SGA.servicio.PersonaService;
 import com.SGA.servicio.UsuarioService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -26,6 +28,8 @@ import java.util.List;
 public class UsuariosController {
     @Autowired
     private UsuarioService usuarioservice;
+
+
     @Autowired
     private AuthenticationManager authenticationManager;
     @Autowired
@@ -35,10 +39,15 @@ public class UsuariosController {
     @Autowired
     private JwtTokenProvider jwtTokenProvider;
 
+//    @GetMapping("/listar")
+//    public List<StandarUserDto> listarUsuarios(){
+//        return usuarioservice.obtenerUsuarios();
+//    }
+    
     @GetMapping("/listar")
-    public List<StandarUserDto> listarUsuarios(){
-        return usuarioservice.obtenerUsuarios();
-    }
+	public List<Usuario> all() {
+		return usuarioservice.all();
+	}
 
     @GetMapping("/listar/{id}")
     public ResponseEntity<Usuario> obtenerUsuarios (@PathVariable Long id){
@@ -49,7 +58,9 @@ public class UsuariosController {
             return new ResponseEntity<Usuario>(HttpStatus.NOT_FOUND);
         }
     }
+    
 
+    
     @PostMapping("/Verificacion")
     public ResponseEntity<JWTAuthResponseDto> vertificarContraseña(@RequestBody LoginDto logintDto){
         Usuario unUsuario  = usuarioRepositorio
@@ -64,6 +75,8 @@ public class UsuariosController {
         unUsuario.setPassword("**********");
         return  ResponseEntity.ok(new JWTAuthResponseDto(token, unUsuario));
     }
+    
+ 
 
     @GetMapping(value = "/current")
     public ResponseEntity<?> current() {

@@ -10,7 +10,6 @@ import org.springframework.stereotype.Repository;
 import com.SGA.entidades.Usuario;
 
 
-@Repository
 public interface UsuarioRepositorio extends JpaRepository<Usuario, Long>{
 	 
 	public Optional<Usuario> findByEmail(String email);
