@@ -2,6 +2,7 @@ package com.SGA.entidades;
 
 
 import java.io.Serializable;
+import java.util.Date;
 import java.util.Optional;
 
 import javax.persistence.CascadeType;
@@ -15,6 +16,8 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
@@ -24,6 +27,8 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+
+import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.lang.NonNull;
 
 @Getter
@@ -40,10 +45,6 @@ public class Persona implements Serializable {
 
 	@Column(name="idPersona")
 	private Long idPersona;
-
-
-	
-	
 	
 	@ManyToOne(fetch = FetchType.EAGER, optional = false)
 	@JoinColumn(name = "id_tipo_dumento", nullable = false)
@@ -65,7 +66,7 @@ public class Persona implements Serializable {
 	@Column(length = 50, name="perApellido")
 	private String apellido;
 	@NotEmpty(message="El campo no debe ser vacio")
-
+	
 	@Column(length = 50,name="perFechaNacimiento")
 	private String fechaNacimiento;
 

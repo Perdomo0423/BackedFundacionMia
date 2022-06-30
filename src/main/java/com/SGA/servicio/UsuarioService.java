@@ -27,6 +27,10 @@ public interface UsuarioService {
     Usuario save(com.SGA.entidades.Usuario usuario);
 
     HttpStatus updatePassword(UsuarioDto usuario);
+    
+//    HttpStatus actualizarContra( usuario);
+    
+    
 }
 
  

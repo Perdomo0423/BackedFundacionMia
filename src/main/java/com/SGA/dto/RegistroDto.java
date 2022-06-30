@@ -1,5 +1,7 @@
 package com.SGA.dto;
 
+import java.util.Date;
+
 import com.SGA.entidades.Departamento;
 import com.SGA.entidades.Municipio;
 import com.SGA.entidades.Persona;
@@ -13,16 +15,23 @@ public class RegistroDto {
 	private TipoDocumento unTipoDocumento;
 	 private Departamento unDepartamento;
 	 private Municipio unMunicipio;
+	 private Rol unRol;
+	 private Date fechaNacimiento;
 	
-	
-	 public Municipio getUnMunicipio() {
+
+	public Date getFechaNacimiento() {
+		return fechaNacimiento;
+	}
+	public void setFechaNacimiento(Date fechaNacimiento) {
+		this.fechaNacimiento = fechaNacimiento;
+	}
+	public Municipio getUnMunicipio() {
 		return unMunicipio;
 	}
 	public void setUnMunicipio(Municipio unMunicipio) {
 		this.unMunicipio = unMunicipio;
 	}
 
-	
 	
 	public TipoDocumento getUnTipoDocumento() {
 		return unTipoDocumento;
@@ -36,7 +45,7 @@ public class RegistroDto {
 	public void setUnTipoDocumento(TipoDocumento unTipoDocumento) {
 		this.unTipoDocumento = unTipoDocumento;
 	}
-	private Rol unRol;
+	
 	public String getUsername() {
 		return username;
 	}

@@ -5,6 +5,8 @@ import java.util.Date;
 import java.util.Optional;
 
 import com.SGA.servicio.AuthService;
+
+import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -13,13 +15,18 @@ import org.springframework.security.authentication.UsernamePasswordAuthenticatio
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.SGA.dto.LoginDto;
+import com.SGA.dto.RecuperarContraseñaDto;
 import com.SGA.dto.RegistroDto;
+import com.SGA.entidades.Contratista;
 import com.SGA.entidades.Correo;
 import com.SGA.entidades.Municipio;
 import com.SGA.entidades.Persona;
@@ -122,7 +129,44 @@ public class AuthControlador {
 
 		Correo.enviarCorreo(unUsuario.getEmail(), asunto, mensaje);
 	}
+	
+	
+	@PutMapping("recuperar")
+	public ResponseEntity<?> recuperarContrasena(@RequestBody RecuperarContraseñaDto recuperarDto){
+		try {
+			Optional<Usuario> saveUser = usuarioRepositorio.findByUsernameOrEmail(recuperarDto.getUsername(), recuperarDto.getEmail());
+			Usuario usuario = saveUser.get();
+			usuario.setPassword("");
+			usuario.genearPassword();
+			String contraseña =usuario.getPassword();
+			usuario.setPassword(passwordEncoder.encode(contraseña));
+			usuarioRepositorio.save(usuario);
+			recuperarContraseña(usuario, contraseña);
+			return new ResponseEntity<>("contraseña actualizada", HttpStatus.OK);
+		} catch (Exception e) {
+			System.out.println(e);
+			return new ResponseEntity<>("algo mal", HttpStatus.BAD_REQUEST);
+		}
+	}
 
-
+	private void recuperarContraseña(Usuario unUsuario, String password){
+		String asunto = " Nuevas credenciales de acceso - Usuario de acceso a FundaciÃ³n MÃ­a ''Construyendo Futuro'' ";
+		String mensaje =
+			"<br><a>Las nuevas credenciales de acceso al software FundaciÃ³n Mia ''Construyendo Futuro'' </a>"
+				+ "<a>se realizaron con exito.</a>"
+				+ "<br><b>       </b>"
+				+ "<br><b>       </b>"
+//				+ "<br><b>Usuario: </b>" + unUsuario.getUsername()
+				+ "<br><b>Correo: </b>" + unUsuario.getEmail()
+				+ "<br><b>ContraseÃ±a: </b>" + password
+				+ "<br><a>Una vez ingrese el usuario con la  contraseÃ±a, se sugiere realizar el cambio por </a>"
+				+ "<a>una contraseÃ±a de fÃ¡cil acceso .   <a>"
+				+ "<br>"
+				+ "<hr>"
+				+ "<br><b>       </b>"
+				+ "<br><b>FundaciÃ³n MÃ­a ''Construyendo futuro'' 2022 </b>"
+				+ "<br><br><img src = 'https://i.ibb.co/2dPrLBQ/leidy-gomez-logo-mia-1.png' with='300px' height='220px'/>";
+		Correo.enviarCorreo(unUsuario.getEmail(), asunto, mensaje);
+	}
 	
 }

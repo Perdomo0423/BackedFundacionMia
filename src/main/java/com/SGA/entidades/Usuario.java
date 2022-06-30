@@ -33,26 +33,24 @@ public class Usuario {
 
     @Column
 	private String password;
-
     
     @Transient
     private String confirmPassword;
 
     @ManyToMany
-
 	private Set<Rol> roles = new HashSet<>();
 	
 	@OneToOne(cascade = {CascadeType.ALL})
 	@JoinColumn(name="id_Persona")
 	private Persona unaPersona;
 
-    public void genearPassword(){
+    public void genearPassword() {
         String minusculas= "abcdefghijklmnopqrstuvwxyz";
         String mayusculas="ABCDEFGHIJKLMNOPQRSTUVWXYZ";
         String dijitos="0123456789";
         String especiales="@#$%&?";
         String passwordGenerado="";
-        for(int i=0;i<2;i++){
+        for(int i=0; i<2; i++){
             Random aleatorio= new Random();
             int posmin= aleatorio.nextInt(minusculas.length());
             int posmay=aleatorio.nextInt(mayusculas.length());
@@ -65,7 +63,7 @@ public class Usuario {
                     especiales.substring(posEspeciales,posEspeciales+1);
         }
         
-        this.password=passwordGenerado;
+        this.password = passwordGenerado;
     }
 
     @Override
@@ -88,7 +86,6 @@ public class Usuario {
         Usuario usuario = (Usuario) o;
         return id.equals(usuario.id) && username.equals(usuario.username) && email.equals(usuario.email) && password.equals(usuario.password) && confirmPassword.equals(usuario.confirmPassword) && roles.equals(usuario.roles) && unaPersona.equals(usuario.unaPersona);
     }
-
     
     @Override
     public int hashCode() {

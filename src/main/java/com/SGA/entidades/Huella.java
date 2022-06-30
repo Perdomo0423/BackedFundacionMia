@@ -5,9 +5,12 @@ import java.sql.Blob;
 import javax.annotation.Generated;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -27,7 +30,11 @@ public class Huella {
 		this.nombre = nombre;
 		this.huella = huella;
 	}
-
+	
+	@OneToOne(fetch = FetchType.EAGER, optional = false)
+	@JoinColumn(name = "id_estudiante", nullable = false)
+	private Estudiante idEstudiante;
+	
 	public Huella() {
 		// TODO Auto-generated constructor stub
 	}

@@ -46,6 +46,7 @@ public class Correo {
                 transport.sendMessage(message, message.getAllRecipients());
             enviado=true;
         }catch (MessagingException me) {
+        	System.out.println(me);
             //Si se produce un error  
             mensaje=me.getMessage();            
         }
