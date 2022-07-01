@@ -16,7 +16,7 @@ public class ExcelController {
 	private ExcelService excelService;
 
 	@PostMapping
-	public ResponseEntity<?> cargarPaises(@RequestParam("file") MultipartFile file, @RequestParam String type)
+	public ResponseEntity<?> cargararchivos(@RequestParam("file") MultipartFile file, @RequestParam String type)
 			throws IOException, InvalidFormatException {
 		return this.excelService.saveExcel(file, type);
 	}

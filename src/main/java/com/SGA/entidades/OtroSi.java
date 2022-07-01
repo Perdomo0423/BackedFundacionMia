@@ -6,12 +6,13 @@ import java.util.Date;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
-
 
 import lombok.Getter;
 import lombok.Setter;
@@ -19,31 +20,14 @@ import lombok.Setter;
 @Getter
 @Setter
 @Entity
-@Table(name = "contratista")
-public class Contratista implements Serializable {
+@Table(name = "otro_si")
+public class OtroSi implements Serializable {
 	
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	private Long nit;
-	
-	@Column(name = "nombre_zona", length = 30, nullable = false)
-	private String nombreZona;
-	
-	@Column(name = "representante_legal", length = 30, nullable = false)
-	private String representanteLegal;
-	
-	@Column(name = "numero_documento", length = 30, nullable = false)
-	private int numeroDocumento;
-	
-	@Column(name = "numero_contrato", length = 30, nullable = false)
-	private int numeroContrato;
-	
-	@Column(name = "fecha_inicio",  length = 20, nullable = false)
-	private String fechaInicio;
-	
-	@Column(name = "fecha_suscripcion",  length = 20, nullable = false)
-	private String fechaSuscripcion;
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Long id;
 	
 	@Column(name = "cantidad_complemento", length = 30, nullable = false)
 	private int cantidadComplemento;
@@ -83,7 +67,7 @@ public class Contratista implements Serializable {
 	
 	@Column(name = "cantidad_racion_industrializada", length = 30, nullable = false)
 	private int cantidadRacionIndustrializada;
-	
+	   
 	@Column(name = "costo_racion_industrializada", length = 30, nullable = false)
 	private int costoRacionIndustrializada;
 	
@@ -93,24 +77,19 @@ public class Contratista implements Serializable {
 	@Column(name = "costo_racion_casa", length = 30, nullable = false)
 	private int costoRacionCasa;
 	
-	@Column(name = "dias_atender", length = 30, nullable = false)
-	private int diasAtender;
+	@Column(name = "fecha_inicio_otro",  length = 20, nullable = false)
+	private String fechaInicioOtro;
 	
-	@Column(name = "cantidades_diarias", length = 30, nullable = false)
-	private int cantidadesDiarias;
-	
-	@Column(name = "estado", nullable = false)
-	private String estado;
+//	@Column(name = "estado", nullable = false)
+//	private String estado;
 
 	
-	@OneToOne(fetch = FetchType.EAGER, optional = false)
-	@JoinColumn(name = "id_persona", nullable = false)
-	private Persona idPersona;
-	
-	@OneToOne(fetch = FetchType.EAGER, optional = false)
-	@JoinColumn(name = "id_zona", nullable = false)
-	private Zona idZona;
+	@ManyToOne(fetch = FetchType.EAGER, optional = false)
+	@JoinColumn(name = "id_contratista", nullable = false)
+	private Contratista idContratista;
+
 	
 	
-	
+
+
 }
