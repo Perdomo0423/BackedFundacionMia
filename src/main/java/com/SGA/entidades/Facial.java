@@ -31,9 +31,7 @@ public class Facial implements Serializable {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
-	@Column(name = "nom_foto")
-	private String nomFoto;
-	
+
 	@Column(name = "est_foto")
     private Blob foto;
 	

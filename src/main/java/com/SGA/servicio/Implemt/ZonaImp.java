@@ -33,5 +33,11 @@ public class ZonaImp implements ZonaService{
 	@Override
 	public void delete(Long id) {
 		this.repository.deleteById(id);		
+	}
+
+	@Override
+	public List<Zona> listarSecretaria(Long id_secretaria) {
+		return repository.listZonaSecretaria(id_secretaria);
+	
 	}	
 }

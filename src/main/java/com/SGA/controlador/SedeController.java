@@ -22,8 +22,8 @@ public class SedeController {
         return sedeservice.findAll();
     }
 
-    @GetMapping(value={"/listarS/{id_municipio}/{sed_zona}"})
-    public List<Sede> listarsedes1(@PathVariable("id_municipio")Long id_municipio, @PathVariable("sed_zona") String sed_zona ){
-        return sedeservice.listarSedes1(id_municipio , sed_zona);
-    }
+//    @GetMapping(value={"/listarDepartamento/{id_municipio}/{id_departamento}"})
+//    public List<Sede> listarsedes1(@PathVariable("id_municipio")Long id_municipio, @PathVariable("id_departamento") Long id_departamento ){
+//        return sedeservice.listarSedes1(id_municipio , sed_zona);
+//    }
 }

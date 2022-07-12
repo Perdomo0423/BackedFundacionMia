@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.SGA.entidades.Estudiante;
 import com.SGA.entidades.Zona;
 import com.SGA.servicio.ZonaService;
 
@@ -66,6 +67,12 @@ public class ZonaController{
 	@ResponseStatus(code = HttpStatus.NO_CONTENT)
 	public void delete(@PathVariable Long id) {
 		service.delete(id);
+	}
+	
+	
+	@GetMapping(value ={"/secretaria/{id_secretaria}"})
+	public List<Zona> listarSecretaria(@PathVariable("id_secretaria") Long id_secretaria){
+		return service.listarSecretaria(id_secretaria);
 	}
 	
 }

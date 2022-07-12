@@ -19,16 +19,9 @@ import java.util.Date;
 @Entity
 @Table(name = "estudiante")
 public class Estudiante implements Serializable {
-
-    private static final long serialVersionUID = 2780027400134309881L;
+    private static final long serialVersionUID = 1L;
+    
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "idEstudiante")
-    private Long idEstudiante;
-    
-    
-    
-    @Column(name = "estNumeroDocumento")
     private Long numeroDocumento;
 
     @Column(name = "estNombre1")

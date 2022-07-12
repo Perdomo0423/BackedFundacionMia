@@ -9,9 +9,14 @@ import java.io.Serializable;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Setter
@@ -28,7 +33,11 @@ public class Zona implements Serializable{
 	private Long id;
 	
 	@Column(length =60)
-	private String nombre;
+	private String nombre_zona;
+	
+	@ManyToOne(fetch = FetchType.EAGER, optional = false)
+	@JoinColumn(name = "id_secretaria", nullable = false)
+	private Secretaria idSecretaria;
 
 
 }

@@ -80,8 +80,8 @@ public class OtroSi implements Serializable {
 	@Column(name = "fecha_inicio_otro",  length = 20, nullable = false)
 	private String fechaInicioOtro;
 	
-//	@Column(name = "estado", nullable = false)
-//	private String estado;
+ 	@Column(name = "dias_atender", nullable = false)
+	private int diasAtender;
 
 	
 	@ManyToOne(fetch = FetchType.EAGER, optional = false)
