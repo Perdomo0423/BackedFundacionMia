@@ -7,6 +7,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.SGA.entidades.Contratista;
+import com.SGA.entidades.Secretaria;
+import com.SGA.entidades.Zona;
 import com.SGA.repositorio.ContratistaRepository;
 import com.SGA.servicio.ContratistaService;
 
@@ -33,5 +35,13 @@ public class ContratistaImp implements ContratistaService{
 	@Override
 	public void delete(Long nit) {
 		this.repository.deleteById(nit);		
-	}	
+	}
+
+
+	@Override
+	public List<Contratista> listarZona(Long id_Zona) {
+		return repository.listZona(id_Zona);
+
+	}
+	
 }

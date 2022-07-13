@@ -17,6 +17,8 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.SGA.entidades.Contratista;
+import com.SGA.entidades.Secretaria;
+import com.SGA.entidades.Zona;
 import com.SGA.servicio.ContratistaService;
 
 
@@ -66,6 +68,12 @@ public class ContratistaController{
 	@ResponseStatus(code = HttpStatus.NO_CONTENT)
 	public void delete(@PathVariable Long nit) {
 		service.delete(nit);
+	}
+	
+
+	@GetMapping(value ={"/zona/{id_zona}"})
+	public List<Contratista> listarZona(@PathVariable("id_zona") Long id_zona){
+		return service.listarZona(id_zona);
 	}
 	
 }
