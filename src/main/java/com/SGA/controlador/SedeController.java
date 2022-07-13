@@ -1,5 +1,6 @@
 package com.SGA.controlador;
 
+import com.SGA.entidades.Estudiante;
 import com.SGA.entidades.Sede;
 import com.SGA.servicio.SedeService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,9 +22,9 @@ public class SedeController {
     public List<Sede> listarSede(){
         return sedeservice.findAll();
     }
-
-//    @GetMapping(value={"/listarDepartamento/{id_municipio}/{id_departamento}"})
-//    public List<Sede> listarsedes1(@PathVariable("id_municipio")Long id_municipio, @PathVariable("id_departamento") Long id_departamento ){
-//        return sedeservice.listarSedes1(id_municipio , sed_zona);
-//    }
+    
+    @GetMapping(value ={"/institucion/{id_institucion}"})
+	public List<Sede> listarSede(@PathVariable("id_institucion") Long id_institucion){
+		return sedeservice.listarSede(id_institucion);
+	}
 }

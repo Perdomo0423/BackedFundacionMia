@@ -51,6 +51,11 @@ public class InstitucionImp implements InstitucionService {
 	public void deleteById(Long id) {
 		institucionRepository.deleteById(id);
 	}
+
+	@Override
+	public List<Institucion> listarInstitucion(Long id_municipio) {
+		return  institucionRepository.listInstitucion(id_municipio);
+	}
 	
 
 

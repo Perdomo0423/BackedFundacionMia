@@ -21,6 +21,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.SGA.entidades.Institucion;
+import com.SGA.entidades.Secretaria;
 import com.SGA.servicio.InstitucionService;
  
 
@@ -110,5 +111,11 @@ public class InstitucionController {
 				
 		return institucion;
 	
+	}
+	
+
+	@GetMapping(value ={"/municipio/{id_municipio}"})
+	public List<Institucion> listarInstitucion(@PathVariable("id_municipio") Long id_municipio){
+		return institucionService.listarInstitucion(id_municipio);
 	}
 }
