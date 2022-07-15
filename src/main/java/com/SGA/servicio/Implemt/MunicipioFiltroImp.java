@@ -20,8 +20,8 @@ public class MunicipioFiltroImp implements MunicipioFiltroService{
 
 
 	@Override
-	public List<Municipio> listarMunici(Long id_secretaria) {
-		return munyRepository.listMunicipio(id_secretaria);
+	public List<Municipio> listarMunici(Long id_zona) {
+		return munyRepository.listMunicipio(id_zona);
 	}
 
 }

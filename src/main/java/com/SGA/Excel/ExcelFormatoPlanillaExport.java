@@ -143,22 +143,22 @@ public class ExcelFormatoPlanillaExport {
 		XSSFClientAnchor firma1 = new XSSFClientAnchor();
 		firma1.setCol1(4);
 		firma1.setCol2(5);
-		firma1.setRow1(64);
-		firma1.setRow2(66);
+		firma1.setRow1(46);
+		firma1.setRow2(48);
 
 		XSSFDrawing imagen5 = (XSSFDrawing) sheet.createDrawingPatriarch();
 		XSSFClientAnchor firma2 = new XSSFClientAnchor();
 		firma2.setCol1(9);
 		firma2.setCol2(15);
-		firma2.setRow1(64);
-		firma2.setRow2(66);
+		firma2.setRow1(46);
+		firma2.setRow2(48);
 		
 		XSSFDrawing imagen6 = (XSSFDrawing) sheet.createDrawingPatriarch();
 		XSSFClientAnchor firma3 = new XSSFClientAnchor();
 		firma3.setCol1(32);
 		firma3.setCol2(40);
-		firma3.setRow1(64);
-		firma3.setRow2(66);
+		firma3.setRow1(46);
+		firma3.setRow2(48);
 		
 		
 		
@@ -237,19 +237,19 @@ public class ExcelFormatoPlanillaExport {
 		row=sheet.createRow(0);
         createCell(row,6,"REGISTRO Y CONTROL DE ASISTENCIA",style2);
         sheet.addMergedRegion(new CellRangeAddress(0,2,0,5));
-        sheet.addMergedRegion(new CellRangeAddress(0,2,6,42)); 
+        sheet.addMergedRegion(new CellRangeAddress(0,2,6,46)); 
         
         row=sheet.createRow(3);
         createCell(row,0,"DEPARTAMENTO/CODIGO DANE:HUILA/41",style2);
         createCell(row,3,"MUNICIPIO/CODIGO DANE:",style2);
         createCell(row,5,"INSTITUCION EDUCATIVA/CODIGO DANE:",style2);
         createCell(row,15,"SEDE EDUCATIVA/CODIGO DANE:",style2);
-        createCell(row,34,"MES/AÑO:",style2);
+        createCell(row,36,"MES/AÑO:",style2);
         sheet.addMergedRegion(new CellRangeAddress(3,4,0,2));
         sheet.addMergedRegion(new CellRangeAddress(3,4,3,4));
         sheet.addMergedRegion(new CellRangeAddress(3,4,5,14));
-        sheet.addMergedRegion(new CellRangeAddress(3,4,15,33));
-        sheet.addMergedRegion(new CellRangeAddress(3,4,34,42));
+        sheet.addMergedRegion(new CellRangeAddress(3,4,15,35));
+        sheet.addMergedRegion(new CellRangeAddress(3,4,36,46));
        
                      
         
@@ -260,12 +260,12 @@ public class ExcelFormatoPlanillaExport {
         createCell(row,7,"RACIONES PROGRAMADAS C.A:AM____PM____",style2);
         createCell(row,18,"DESAYUNO:",style2);
         createCell(row,25,"OPERADOR:",style2);
-        createCell(row,34,"No OPERACION:",style2);
+        createCell(row,36,"No OPERACION:",style2);
         sheet.addMergedRegion(new CellRangeAddress(5,6,3,4));
         sheet.addMergedRegion(new CellRangeAddress(5,6,7,17));
         sheet.addMergedRegion(new CellRangeAddress(5,6,18,24));
-        sheet.addMergedRegion(new CellRangeAddress(5,8,25,33));
-        sheet.addMergedRegion(new CellRangeAddress(5,8,34,42));
+        sheet.addMergedRegion(new CellRangeAddress(5,8,25,35));
+        sheet.addMergedRegion(new CellRangeAddress(5,8,36,46));
         sheet.addMergedRegion(new CellRangeAddress(5,8,0,2));
         sheet.addMergedRegion(new CellRangeAddress(5,8,5,6));
        
@@ -274,51 +274,57 @@ public class ExcelFormatoPlanillaExport {
         sheet.addMergedRegion(new CellRangeAddress(7,8,7,17));
         sheet.addMergedRegion(new CellRangeAddress(7,8,18,24));
         sheet.addMergedRegion(new CellRangeAddress(9,9,0,42));
-        sheet.addMergedRegion(new CellRangeAddress(10,10,10,14));
-  		sheet.addMergedRegion(new CellRangeAddress(11,11,10,14));
+        sheet.addMergedRegion(new CellRangeAddress(10,10,10,18));
+  		sheet.addMergedRegion(new CellRangeAddress(11,11,10,18));
    
+  		
+
 
  
-        sheet.addMergedRegion(new CellRangeAddress(12,12,20,41));
-        sheet.addMergedRegion(new CellRangeAddress(13,13,20,41));
+        sheet.addMergedRegion(new CellRangeAddress(12,12,24,45));
+        sheet.addMergedRegion(new CellRangeAddress(13,13,24,45));
         
         
 
         int m=14;
-  		for (m = 14; m <=55 ; m++) {
-  		  sheet.addMergedRegion(new CellRangeAddress(m,m,16,17));
-  		sheet.addMergedRegion(new CellRangeAddress(m,m,18,19));
+  		for (m = 14; m <=38 ; m++) {
+  		  sheet.addMergedRegion(new CellRangeAddress(m,m,20,21));
+  		sheet.addMergedRegion(new CellRangeAddress(m,m,22,23));
   		}
   		
-  		int o=20;
-  		for (o = 20; o <=42 ; o++) {
-  		  sheet.addMergedRegion(new CellRangeAddress(57,61,o,o));
+  		int o=24;
+  		for (o = 24; o <=46 ; o++) {
+  		  sheet.addMergedRegion(new CellRangeAddress(39,43,o,o));
 
   		}
         
 
   		
-        sheet.addMergedRegion(new CellRangeAddress(57,61,0,19));
-        sheet.addMergedRegion(new CellRangeAddress(62,67,0,2));
-        sheet.addMergedRegion(new CellRangeAddress(62,67,6,7));
-        sheet.addMergedRegion(new CellRangeAddress(62,63,3,5));
-        sheet.addMergedRegion(new CellRangeAddress(64,65,3,5));
-        sheet.addMergedRegion(new CellRangeAddress(66,67,3,5));    
-        sheet.addMergedRegion(new CellRangeAddress(62,63,8,21));
-        sheet.addMergedRegion(new CellRangeAddress(64,65,8,21));
-        sheet.addMergedRegion(new CellRangeAddress(66,67,8,21));
-        sheet.addMergedRegion(new CellRangeAddress(62,67,22,29));  
-        sheet.addMergedRegion(new CellRangeAddress(62,63,30,42));
-        sheet.addMergedRegion(new CellRangeAddress(64,65,30,42));
-        sheet.addMergedRegion(new CellRangeAddress(66,67,30,42));
+        sheet.addMergedRegion(new CellRangeAddress(39,43,0,23));
+        sheet.addMergedRegion(new CellRangeAddress(44,49,0,2));
+        sheet.addMergedRegion(new CellRangeAddress(44,49,6,7));
+        sheet.addMergedRegion(new CellRangeAddress(44,45,3,5));
+        sheet.addMergedRegion(new CellRangeAddress(46,47,3,5));
+        sheet.addMergedRegion(new CellRangeAddress(48,49,3,5));    
+        sheet.addMergedRegion(new CellRangeAddress(44,45,8,21));
+        sheet.addMergedRegion(new CellRangeAddress(46,47,8,21));
+        sheet.addMergedRegion(new CellRangeAddress(48,49,8,21));
+        sheet.addMergedRegion(new CellRangeAddress(44,49,22,29));  
+        sheet.addMergedRegion(new CellRangeAddress(44,45,30,46));
+        sheet.addMergedRegion(new CellRangeAddress(46,47,30,46));
+        sheet.addMergedRegion(new CellRangeAddress(48,49,30,46));
         sheet.addMergedRegion(new CellRangeAddress(10,13,8,8));
         sheet.addMergedRegion(new CellRangeAddress(10,13,9,9));
-        sheet.addMergedRegion(new CellRangeAddress(10,13,15,15));
-        sheet.addMergedRegion(new CellRangeAddress(10,13,16,16));
-        sheet.addMergedRegion(new CellRangeAddress(10,13,17,17));
-        sheet.addMergedRegion(new CellRangeAddress(10,13,18,18));
+        sheet.addMergedRegion(new CellRangeAddress(12,13,15,15));
+        sheet.addMergedRegion(new CellRangeAddress(12,13,16,16));
+        sheet.addMergedRegion(new CellRangeAddress(12,13,17,17));
+        sheet.addMergedRegion(new CellRangeAddress(12,13,18,18));
         sheet.addMergedRegion(new CellRangeAddress(10,13,19,19));
-        sheet.addMergedRegion(new CellRangeAddress(10,13,42,42));
+        sheet.addMergedRegion(new CellRangeAddress(10,13,20,20));
+        sheet.addMergedRegion(new CellRangeAddress(10,13,21,21));
+        sheet.addMergedRegion(new CellRangeAddress(10,13,22,22));
+        sheet.addMergedRegion(new CellRangeAddress(10,13,23,23));
+        sheet.addMergedRegion(new CellRangeAddress(10,13,46,46));
 
         
         row=sheet.createRow(7);
@@ -342,14 +348,18 @@ public class ExcelFormatoPlanillaExport {
 	    createCell(row,8,"GENERO",style4);
         createCell(row,9,"GRADO EDUCATIVO",style4);
         createCell(row,10,"tipo de",style);
-        createCell(row,15,"PERTENENCIA ÉTNICA",style4);
-        createCell(row,16,"VICTIMAS DEL ",style8);
-        createCell(row,17,"CONFLICTO",style7);
-        createCell(row,18,"EN CONDICION DE",style8);
-        createCell(row,19,"DISCAPACIDAD",style7);
-        createCell(row,20,"FECHA DE ENTREGA. Escriba el dia hábil al cual corresponde la entrega del complemento alimentairo",style3);
-        createCell(row,42,"RACIONES ATENDIDAS",style4);
-        sheet.addMergedRegion(new CellRangeAddress(10,10,20,41));
+        createCell(row,15,"",style);
+        createCell(row,16,"",style);
+        createCell(row,17,"",style);
+        createCell(row,18,"",style);
+        createCell(row,19,"PERTENENCIA ÉTNICA",style4);
+        createCell(row,20,"VICTIMAS DEL",style8);
+        createCell(row,21,"CONFLICTO",style7);
+        createCell(row,22,"EN CONDICION DE",style8);
+        createCell(row,23,"DISCAPACIDAD",style7);
+        createCell(row,24,"FECHA DE ENTREGA. Escriba el dia hábil al cual corresponde la entrega del complemento alimentairo",style3);
+        createCell(row,46,"RACIONES ATENDIDAS",style4);
+        sheet.addMergedRegion(new CellRangeAddress(10,10,24,45));
   
         
         
@@ -373,22 +383,17 @@ public class ExcelFormatoPlanillaExport {
         createCell(row,11,"",style);
         createCell(row,12,"",style);
         createCell(row,13,"",style);
-
-        createCell(row,15,"",style4);
-        createCell(row,16,"",style8);
-        createCell(row,17,"",style7);
-        createCell(row,18,"",style8);
-        createCell(row,19,"",style7);
-        int t=42;
-		for (t = 42; t <=42 ; t++) {
-			 createCell(row,t,"",style10);
-		}
-        
-        createCell(row,42,"",style10);
+        createCell(row,15,"",style);
+        createCell(row,16,"",style);
+        createCell(row,17,"",style);
+        createCell(row,18,"",style);
+        createCell(row,19,"",style4);
+        createCell(row,20,"",style8);
+        createCell(row,21,"",style7);
+        createCell(row,22,"",style8);
+        createCell(row,23,"",style7);
+        createCell(row,46,"",style4);
       
-        
-       
-        
         
         row=sheet.createRow(12);
       int d=0;
@@ -402,14 +407,20 @@ public class ExcelFormatoPlanillaExport {
       createCell(row,12,"",style4);
       createCell(row,13,"",style4);
       createCell(row,14,"",style4);
-      createCell(row,15,"",style11);
-      createCell(row,16,"",style8);
-      createCell(row,17,"",style7);
-      createCell(row,18,"",style8);
+      createCell(row,15,"RACION CASA",style4);
+      createCell(row,16,"R.T CALIENTE",style4);
+      createCell(row,17,"INDUSTRIALIZADA",style4);
+      createCell(row,18,"BONO",style4);
       createCell(row,19,"",style7);
-      createCell(row,20,"Días de atencion. Marque con una equis(x) el día que el titular",style3);
+      createCell(row,20,"",style8);
+      createCell(row,21,"",style7);
+      createCell(row,22,"",style8);
+      createCell(row,23,"",style7);
+      createCell(row,24,"Días de atencion. Marque con una equis(x) el día que el titular",style3);
       createCell(row,39,"",style10);
       createCell(row,42,"",style10);
+      createCell(row,46,"",style4);
+
         
         
         
@@ -419,39 +430,33 @@ public class ExcelFormatoPlanillaExport {
 			 createCell(row,e,"",style3);
 		}
 		createCell(row,8,"",style4);
-
         createCell(row,9,"",style4);
         createCell(row,10,"ALMUERZO",style4);
         createCell(row,11,"AM",style4);
         createCell(row,12,"PM",style4);
         createCell(row,13,"DESAYUNO",style4);
         createCell(row,14,"COMIDA",style4);
-        createCell(row,15,"",style11);
-        createCell(row,16,"",style8);
-        createCell(row,17,"",style7);
-        createCell(row,18,"",style8);
+        createCell(row,15,"",style4);
+        createCell(row,16,"",style4);
+        createCell(row,17,"",style4);
+        createCell(row,18,"",style4);
         createCell(row,19,"",style7);
-        createCell(row,20,"de derecho recibe el complemento alimentario",style3);
+        createCell(row,20,"",style8);
+        createCell(row,21,"",style7);
+        createCell(row,22,"",style8);
+        createCell(row,23,"",style7);
+        createCell(row,24,"de derecho recibe el complemento alimentario",style3);
         createCell(row,39,"",style10);
         createCell(row,42,"",style10);
-        
+        createCell(row,46,"",style4);
+
         
        
-        row=sheet.createRow(14);
-        int h=0;
-		for (h = 20; h <=63 ; h++) {
-			 createCell(row,h,"",style11);
-		}
-		
-		 int v=8;
-			for (v = 20; v <=19 ; v++) {
-				 createCell(row,v,"",style11);
-			}
+//			
 			
 			
-			
-	  		  sheet.addMergedRegion(new CellRangeAddress(0,67,43,1000));
-	  		sheet.addMergedRegion(new CellRangeAddress(68,1000,0,1000));
+	  		  sheet.addMergedRegion(new CellRangeAddress(0,49,47,1000));
+	  		sheet.addMergedRegion(new CellRangeAddress(50,1000,0,1000));
 	  		  
 	
 
@@ -468,54 +473,54 @@ public class ExcelFormatoPlanillaExport {
 		}
 		
         
-        row=sheet.createRow(57);
+        row=sheet.createRow(39);
         createCell(row,0,"FIRMA DIARIA REPRESENTANTE SEDE EDUCATIVA",style2);
         
-        row=sheet.createRow(62);
+        row=sheet.createRow(44);
         createCell(row,0,"RESPONSABLE SEDE EDUCATIVA:",style2);
         createCell(row,3,"NOMBRE:",style2);
         createCell(row,30,"NOMBRE:",style2);
         createCell(row,6,"RECTOR INSTITUCION EDUCATIVA:",style2);
         createCell(row,22,"RESPONSABLE DEL OPERADOR:",style2);
        
-        row=sheet.createRow(64);
+        row=sheet.createRow(46);
         createCell(row,3,"FIRMA:",style2);
         createCell(row,30,"FIRMA:",style2);
         
         
-        row=sheet.createRow(66);
+        row=sheet.createRow(48);
         createCell(row,3,"CEDULA:",style2);
         createCell(row,30,"CEDULA:",style2);
 		
 
 	}
-	private void writeDataLines() {
-		int rowCount=14;
-		
-		CellStyle style=workbook.createCellStyle();
-		XSSFFont font=workbook.createFont();
-		font.setFontHeight(12);
-		style.setFont(font);
-		
-		for(Estudiante stu:listStudent) {
-			Row row=sheet.createRow(rowCount++);
-			int columnCount=1;
-		
-			createCell(row, columnCount++, stu.getUnTipoDocumento().getNombre(), style);
-			createCell(row, columnCount++, stu.getNumeroDocumento(), style);
-			createCell(row, columnCount++, stu.getApellido1(), style);
-			createCell(row, columnCount++, stu.getApellido2(), style);
-			createCell(row, columnCount++, stu.getNombre1(), style);
-			createCell(row, columnCount++, stu.getNombre2(), style);
-			createCell(row, columnCount++, stu.getFechaNacimiento(), style);
-			createCell(row, columnCount++, stu.getGenero(), style);
-			createCell(row, columnCount++, stu.getGrado(), style);
-		}
-	}
+//	private void writeDataLines() {
+//		int rowCount=14;
+//		
+//		CellStyle style=workbook.createCellStyle();
+//		XSSFFont font=workbook.createFont();
+//		font.setFontHeight(12);
+//		style.setFont(font);
+//		
+//		for(Estudiante stu:listStudent) {
+//			Row row=sheet.createRow(rowCount++);
+//			int columnCount=1;
+//		
+//			createCell(row, columnCount++, stu.getUnTipoDocumento().getNombre(), style);
+//			createCell(row, columnCount++, stu.getNumeroDocumento(), style);
+//			createCell(row, columnCount++, stu.getApellido1(), style);
+//			createCell(row, columnCount++, stu.getApellido2(), style);
+//			createCell(row, columnCount++, stu.getNombre1(), style);
+//			createCell(row, columnCount++, stu.getNombre2(), style);
+//			createCell(row, columnCount++, stu.getFechaNacimiento(), style);
+//			createCell(row, columnCount++, stu.getGenero(), style);
+//			createCell(row, columnCount++, stu.getGrado(), style);
+//		}
+//	}
 	
 	public void export(HttpServletResponse response) throws IOException{
 		writeHeaderLine();
-		writeDataLines();
+//		writeDataLines();
 	
 		
 		ServletOutputStream outputStream=response.getOutputStream();

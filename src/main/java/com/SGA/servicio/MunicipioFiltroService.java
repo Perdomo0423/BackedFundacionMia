@@ -10,6 +10,6 @@ import com.SGA.entidades.Municipio;
 @Service
 public interface MunicipioFiltroService {
 	
-	List<Municipio> listarMunici(Long id_secretaria);
+	List<Municipio> listarMunici(Long id_zona);
 
 }

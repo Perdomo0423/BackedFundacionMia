@@ -28,9 +28,9 @@ public class MunicipioController {
         return municipioservice.listarMunicipio();
     }
     
-    @GetMapping(value ={"/secretaria/{id_secretaria}"})
-	public List<Municipio> listarMunici(@PathVariable("id_secretaria") Long id_secretaria){
-		return municipioService.listarMunici(id_secretaria);
+    @GetMapping(value ={"/zona/{id_zona}"})
+	public List<Municipio> listarMunici(@PathVariable("id_zona") Long id_zona){
+		return municipioService.listarMunici(id_zona);
 	}
 
 }

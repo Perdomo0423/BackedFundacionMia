@@ -21,6 +21,6 @@ public interface MunicipioRepository extends JpaRepository<Municipio, Long>{
 	
 	boolean existsByCodigoAndUnDepartamentoCodigo(int codigo, int codigoDep);
 
-	@Query(value = "SELECT * FROM municipio INNER JOIN zonas INNER JOIN secretaria ON municipio.id_zona=zonas.id AND zonas.id_secretaria= :id_secretaria ", nativeQuery = true)
-	List<Municipio> listMunicipio( @Param("id_secretaria") Long id_secretaria);
+	@Query(value = "SELECT * FROM municipio where id_zona= :id_zona ", nativeQuery = true)
+	List<Municipio> listMunicipio( @Param("id_zona") Long id_secretaria);
 }

@@ -136,9 +136,9 @@ public class ExcelFormatoCertificadoExport {
 
 		createCell(row,0,"",style);
 		sheet.addMergedRegion(new CellRangeAddress(0,0,0,12));
-		sheet.addMergedRegion(new CellRangeAddress(0,69,13,1000));
+		sheet.addMergedRegion(new CellRangeAddress(0,82,13,1000));
 		sheet.addMergedRegion(new CellRangeAddress(1,3,0,3));
-		sheet.addMergedRegion(new CellRangeAddress(70,1000,0,1000));
+		sheet.addMergedRegion(new CellRangeAddress(83,1000,0,1000));
 		
 		
 		
@@ -274,117 +274,193 @@ public class ExcelFormatoCertificadoExport {
           sheet.addMergedRegion(new CellRangeAddress(26,26,5,6));
           sheet.addMergedRegion(new CellRangeAddress(26,26,8,12));
           
-          sheet.addMergedRegion(new CellRangeAddress(22,26,0,0));
+          
           
           row=sheet.createRow(27);
-          createCell(row, 1, "CAJM/CAJT          ", style);
+          createCell(row, 1, "RACION CASA", style);
           sheet.addMergedRegion(new CellRangeAddress(27,27,2,4));
           sheet.addMergedRegion(new CellRangeAddress(27,27,5,6));
           sheet.addMergedRegion(new CellRangeAddress(27,27,8,12));
-        
+          
           
           row=sheet.createRow(28);
-          createCell(row, 1, "ALMUERZO          ", style);
+          createCell(row, 1, "RTC", style);
           sheet.addMergedRegion(new CellRangeAddress(28,28,2,4));
           sheet.addMergedRegion(new CellRangeAddress(28,28,5,6));
           sheet.addMergedRegion(new CellRangeAddress(28,28,8,12));
           
           
           row=sheet.createRow(29);
-          createCell(row, 1, "RI          ", style);
+          createCell(row, 1, "BONO", style);
           sheet.addMergedRegion(new CellRangeAddress(29,29,2,4));
           sheet.addMergedRegion(new CellRangeAddress(29,29,5,6));
           sheet.addMergedRegion(new CellRangeAddress(29,29,8,12));
           
+          sheet.addMergedRegion(new CellRangeAddress(22,29,0,0));
           
           row=sheet.createRow(30);
-          createCell(row, 1, "DESAYUNO", style);
+          createCell(row, 1, "CAJM/CAJT          ", style);
           sheet.addMergedRegion(new CellRangeAddress(30,30,2,4));
           sheet.addMergedRegion(new CellRangeAddress(30,30,5,6));
           sheet.addMergedRegion(new CellRangeAddress(30,30,8,12));
-          
+        
           
           row=sheet.createRow(31);
-          createCell(row, 1, "COMIDA", style);
+          createCell(row, 1, "ALMUERZO          ", style);
           sheet.addMergedRegion(new CellRangeAddress(31,31,2,4));
           sheet.addMergedRegion(new CellRangeAddress(31,31,5,6));
           sheet.addMergedRegion(new CellRangeAddress(31,31,8,12));
-
-          sheet.addMergedRegion(new CellRangeAddress(27,31,0,0));
+          
           
           row=sheet.createRow(32);
-          createCell(row, 1, "CAJM/CAJT          ", style);
+          createCell(row, 1, "RI          ", style);
           sheet.addMergedRegion(new CellRangeAddress(32,32,2,4));
           sheet.addMergedRegion(new CellRangeAddress(32,32,5,6));
           sheet.addMergedRegion(new CellRangeAddress(32,32,8,12));
-        
+          
           
           row=sheet.createRow(33);
-          createCell(row, 1, "ALMUERZO          ", style);
+          createCell(row, 1, "DESAYUNO", style);
           sheet.addMergedRegion(new CellRangeAddress(33,33,2,4));
           sheet.addMergedRegion(new CellRangeAddress(33,33,5,6));
           sheet.addMergedRegion(new CellRangeAddress(33,33,8,12));
           
           
           row=sheet.createRow(34);
-          createCell(row, 1, "RI          ", style);
+          createCell(row, 1, "COMIDA", style);
           sheet.addMergedRegion(new CellRangeAddress(34,34,2,4));
           sheet.addMergedRegion(new CellRangeAddress(34,34,5,6));
           sheet.addMergedRegion(new CellRangeAddress(34,34,8,12));
           
           
           row=sheet.createRow(35);
-          createCell(row, 1, "DESAYUNO", style);
+          createCell(row, 1, "RACION CASA", style);
           sheet.addMergedRegion(new CellRangeAddress(35,35,2,4));
           sheet.addMergedRegion(new CellRangeAddress(35,35,5,6));
           sheet.addMergedRegion(new CellRangeAddress(35,35,8,12));
           
           
           row=sheet.createRow(36);
-          createCell(row, 1, "COMIDA", style);
+          createCell(row, 1, "RTC", style);
           sheet.addMergedRegion(new CellRangeAddress(36,36,2,4));
           sheet.addMergedRegion(new CellRangeAddress(36,36,5,6));
           sheet.addMergedRegion(new CellRangeAddress(36,36,8,12));
-   
-          sheet.addMergedRegion(new CellRangeAddress(32,36,0,0));
+          
 
           
           row=sheet.createRow(37);
-          createCell(row, 0, "TOTAL", style);
-          sheet.addMergedRegion(new CellRangeAddress(37,37,0,1));
-          sheet.addMergedRegion(new CellRangeAddress(37,37,2,12));
+          createCell(row, 1, "BONO", style);
+          sheet.addMergedRegion(new CellRangeAddress(37,37,2,4));
+          sheet.addMergedRegion(new CellRangeAddress(37,37,5,6));
+          sheet.addMergedRegion(new CellRangeAddress(37,37,8,12));
+//
+          sheet.addMergedRegion(new CellRangeAddress(30,37,0,0));
           
           row=sheet.createRow(38);
-          createCell(row, 0, "CAJM/CAJT = Complemento Alimentario Jornada Mañana  /  Complemento Alimentario Jornada Tarde", style);
-          sheet.addMergedRegion(new CellRangeAddress(38,38,0,12));
-    
-          
+          createCell(row, 1, "CAJM/CAJT          ", style);
+          sheet.addMergedRegion(new CellRangeAddress(38,38,2,4));
+          sheet.addMergedRegion(new CellRangeAddress(38,38,5,6));
+          sheet.addMergedRegion(new CellRangeAddress(38,38,8,12));
+        
           
           row=sheet.createRow(39);
-          createCell(row, 0, "ALMUERZO = Almuerzo", style);
-          sheet.addMergedRegion(new CellRangeAddress(39,39,0,12));
-
+          createCell(row, 1, "ALMUERZO          ", style);
+          sheet.addMergedRegion(new CellRangeAddress(39,39,2,4));
+          sheet.addMergedRegion(new CellRangeAddress(39,39,5,6));
+          sheet.addMergedRegion(new CellRangeAddress(39,39,8,12));
           
           
           row=sheet.createRow(40);
-          createCell(row, 0, "RI: Ración Industrializada",style);
-          sheet.addMergedRegion(new CellRangeAddress(40,40,0,12));
+          createCell(row, 1, "RI          ", style);
+          sheet.addMergedRegion(new CellRangeAddress(40,40,2,4));
+          sheet.addMergedRegion(new CellRangeAddress(40,40,5,6));
+          sheet.addMergedRegion(new CellRangeAddress(40,40,8,12));
+          
           
           row=sheet.createRow(41);
-          createCell(row, 0, "DESAYUNO: Desayuno",style);
-          sheet.addMergedRegion(new CellRangeAddress(41,41,0,12));
+          createCell(row, 1, "DESAYUNO", style);
+          sheet.addMergedRegion(new CellRangeAddress(41,41,2,4));
+          sheet.addMergedRegion(new CellRangeAddress(41,41,5,6));
+          sheet.addMergedRegion(new CellRangeAddress(41,41,8,12));
+          
           
           row=sheet.createRow(42);
-          createCell(row, 0, "COMIDA: Comida",style);
-          sheet.addMergedRegion(new CellRangeAddress(42,42,0,12));
+          createCell(row, 1, "COMIDA", style);
+          sheet.addMergedRegion(new CellRangeAddress(42,42,2,4));
+          sheet.addMergedRegion(new CellRangeAddress(42,42,5,6));
+          sheet.addMergedRegion(new CellRangeAddress(42,42,8,12));
           
-          sheet.addMergedRegion(new CellRangeAddress(43,43,0,12));
-          sheet.addMergedRegion(new CellRangeAddress(44,44,1,3));
-          sheet.addMergedRegion(new CellRangeAddress(44,44,4,6));
-          sheet.addMergedRegion(new CellRangeAddress(44,44,7,9));
-          sheet.addMergedRegion(new CellRangeAddress(44,44,10,12));
+          
+          row=sheet.createRow(43);
+          createCell(row, 1, "RACION CASA", style);
+          sheet.addMergedRegion(new CellRangeAddress(43,43,2,4));
+          sheet.addMergedRegion(new CellRangeAddress(43,43,5,6));
+          sheet.addMergedRegion(new CellRangeAddress(43,43,8,12));
+          
           
           row=sheet.createRow(44);
+          createCell(row, 1, "RTC", style);
+          sheet.addMergedRegion(new CellRangeAddress(44,44,2,4));
+          sheet.addMergedRegion(new CellRangeAddress(44,44,5,6));
+          sheet.addMergedRegion(new CellRangeAddress(44,44,8,12));
+          
+          
+          row=sheet.createRow(45);
+          createCell(row, 1, "BONO", style);
+          sheet.addMergedRegion(new CellRangeAddress(45,45,2,4));
+          sheet.addMergedRegion(new CellRangeAddress(45,45,5,6));
+          sheet.addMergedRegion(new CellRangeAddress(45,45,8,12));
+   
+          sheet.addMergedRegion(new CellRangeAddress(38,45,0,0));
+ 
+          row=sheet.createRow(46);
+          createCell(row, 0, "TOTAL", style);
+          sheet.addMergedRegion(new CellRangeAddress(46,46,0,1));
+          sheet.addMergedRegion(new CellRangeAddress(46,46,2,12));
+          
+          row=sheet.createRow(47);
+          createCell(row, 0, "CAJM/CAJT = Complemento Alimentario Jornada Mañana  /  Complemento Alimentario Jornada Tarde", style);
+          sheet.addMergedRegion(new CellRangeAddress(47,47,0,12));
+    
+          
+          
+          row=sheet.createRow(48);
+          createCell(row, 0, "ALMUERZO = Almuerzo", style);
+          sheet.addMergedRegion(new CellRangeAddress(48,48,0,12));
+
+          
+          
+          row=sheet.createRow(49);
+          createCell(row, 0, "RI: Ración Industrializada",style);
+          sheet.addMergedRegion(new CellRangeAddress(49,49,0,12));
+          
+          row=sheet.createRow(50);
+          createCell(row, 0, "DESAYUNO: Desayuno",style);
+          sheet.addMergedRegion(new CellRangeAddress(50,50,0,12));
+          
+          row=sheet.createRow(51);
+          createCell(row, 0, "COMIDA: Comida",style);
+          sheet.addMergedRegion(new CellRangeAddress(51,51,0,12));
+          
+          row=sheet.createRow(52);
+          createCell(row, 0, "RPC: Racion Preparada en Casa",style);
+          sheet.addMergedRegion(new CellRangeAddress(52,52,0,12));
+          
+          row=sheet.createRow(53);
+          createCell(row, 0, "RTC: Racio Tranportada Caliente",style);
+          sheet.addMergedRegion(new CellRangeAddress(53,53,0,12));
+          
+          row=sheet.createRow(54);
+          createCell(row, 0, "BONO: Bono",style);
+          sheet.addMergedRegion(new CellRangeAddress(54,54,0,12));
+          
+          sheet.addMergedRegion(new CellRangeAddress(55,55,0,12));
+          sheet.addMergedRegion(new CellRangeAddress(56,56,1,3));
+          sheet.addMergedRegion(new CellRangeAddress(56,56,4,6));
+          sheet.addMergedRegion(new CellRangeAddress(56,56,7,9));
+          sheet.addMergedRegion(new CellRangeAddress(56,56,10,12));
+          
+          row=sheet.createRow(56);
           fuente.setFontHeight(9);
           fuente.setBold(true);
   		  estilo.setFont(fuente);
@@ -396,81 +472,84 @@ public class ExcelFormatoCertificadoExport {
           createCell(row, 7, "TOTAL RACIONES ENTREGADAS RI",estilo);
           createCell(row, 10, "No. TITULARES DE DERECHO",estilo);
 
-          row=sheet.createRow(45);
+          row=sheet.createRow(57);
           createCell(row, 0, "POBLACIÓN EN CONDICIÓN DE DISCAPACIDAD",style);
-          sheet.addMergedRegion(new CellRangeAddress(45,45,1,3));
-          sheet.addMergedRegion(new CellRangeAddress(45,45,4,6));
-          sheet.addMergedRegion(new CellRangeAddress(45,45,7,9));
-          sheet.addMergedRegion(new CellRangeAddress(45,45,10,12));
-          
-          row=sheet.createRow(46);
-          createCell(row, 0, "POBLACIÓN VÍCTIMA DEL CONFLICTO ARMADO",style);
-          sheet.addMergedRegion(new CellRangeAddress(46,46,1,3));
-          sheet.addMergedRegion(new CellRangeAddress(46,46,4,6));
-          sheet.addMergedRegion(new CellRangeAddress(46,46,7,9));
-          sheet.addMergedRegion(new CellRangeAddress(46,46,10,12));
-          
-          row=sheet.createRow(47);
-          createCell(row, 0, "COMUNIDADES ÉTNICAS",style);
-          sheet.addMergedRegion(new CellRangeAddress(47,47,1,3));
-          sheet.addMergedRegion(new CellRangeAddress(47,47,4,6));
-          sheet.addMergedRegion(new CellRangeAddress(47,47,7,9));
-          sheet.addMergedRegion(new CellRangeAddress(47,47,10,12));
-          
-          row=sheet.createRow(48);
-          createCell(row, 0, "POBLACIÓN MAYORITARIA",style);
-          sheet.addMergedRegion(new CellRangeAddress(48,48,1,3));
-          sheet.addMergedRegion(new CellRangeAddress(48,48,4,6));
-          sheet.addMergedRegion(new CellRangeAddress(48,48,7,9));
-          sheet.addMergedRegion(new CellRangeAddress(48,48,10,12));
-          
-          row=sheet.createRow(49);
-          createCell(row, 0, "GRAN TOTAL",style);
-          sheet.addMergedRegion(new CellRangeAddress(49,49,1,3));
-          sheet.addMergedRegion(new CellRangeAddress(49,49,4,6));
-          sheet.addMergedRegion(new CellRangeAddress(49,49,7,9));
-          sheet.addMergedRegion(new CellRangeAddress(49,49,10,12));
-          
-          sheet.addMergedRegion(new CellRangeAddress(50,51,0,12));
-
-          
-          row=sheet.createRow(52);
-          createCell(row, 0, "OBSERVACIONES",estilos);
-          sheet.addMergedRegion(new CellRangeAddress(52,52,0,12));
-          sheet.addMergedRegion(new CellRangeAddress(53,56,0,12));
-          
-          sheet.addMergedRegion(new CellRangeAddress(57,57,0,12));
-          
+          sheet.addMergedRegion(new CellRangeAddress(57,57,1,3));
+          sheet.addMergedRegion(new CellRangeAddress(57,57,4,6));
+          sheet.addMergedRegion(new CellRangeAddress(57,57,7,9));
+          sheet.addMergedRegion(new CellRangeAddress(57,57,10,12));
           
           row=sheet.createRow(58);
-          createCell(row, 0, "La presente certificación se expide como soporte de pago y con base en el registro diario de Titulares de Derecho, que se diligencia en cada Institución Educativa atendida.",style);
-          sheet.addMergedRegion(new CellRangeAddress(58,59,0,12));
-          sheet.addMergedRegion(new CellRangeAddress(60,60,0,12));
+          createCell(row, 0, "POBLACIÓN VÍCTIMA DEL CONFLICTO ARMADO",style);
+          sheet.addMergedRegion(new CellRangeAddress(58,58,1,3));
+          sheet.addMergedRegion(new CellRangeAddress(58,58,4,6));
+          sheet.addMergedRegion(new CellRangeAddress(58,58,7,9));
+          sheet.addMergedRegion(new CellRangeAddress(58,58,10,12));
+          
+          row=sheet.createRow(59);
+          createCell(row, 0, "COMUNIDADES ÉTNICAS",style);
+          sheet.addMergedRegion(new CellRangeAddress(59,59,1,3));
+          sheet.addMergedRegion(new CellRangeAddress(59,59,4,6));
+          sheet.addMergedRegion(new CellRangeAddress(59,59,7,9));
+          sheet.addMergedRegion(new CellRangeAddress(59,59,10,12));
+          
+          row=sheet.createRow(60);
+          createCell(row, 0, "POBLACIÓN MAYORITARIA",style);
+          sheet.addMergedRegion(new CellRangeAddress(60,60,1,3));
+          sheet.addMergedRegion(new CellRangeAddress(60,60,4,6));
+          sheet.addMergedRegion(new CellRangeAddress(60,60,7,9));
+          sheet.addMergedRegion(new CellRangeAddress(60,60,10,12));
           
           row=sheet.createRow(61);
+          createCell(row, 0, "GRAN TOTAL",style);
+          sheet.addMergedRegion(new CellRangeAddress(61,61,1,3));
+          sheet.addMergedRegion(new CellRangeAddress(61,61,4,6));
+          sheet.addMergedRegion(new CellRangeAddress(61,61,7,9));
+          sheet.addMergedRegion(new CellRangeAddress(61,61,10,12));
+//          
+          sheet.addMergedRegion(new CellRangeAddress(62,63,0,12));
+
+          
+          row=sheet.createRow(64);
+          createCell(row, 0, "OBSERVACIONES",estilos);
+          sheet.addMergedRegion(new CellRangeAddress(65,69,0,12));       
+          sheet.addMergedRegion(new CellRangeAddress(64,64,0,12));
+          sheet.addMergedRegion(new CellRangeAddress(70,70,0,12));
+
+          
+//          
+//          
+          row=sheet.createRow(71);
+          createCell(row, 0, "La presente certificación se expide como soporte de pago y con base en el registro diario de Titulares de Derecho, que se diligencia en cada Institución Educativa atendida.",style);
+          sheet.addMergedRegion(new CellRangeAddress(71,72,0,12));
+          sheet.addMergedRegion(new CellRangeAddress(73,73,0,12));
+
+
+//          
+          row=sheet.createRow(74);
           createCell(row, 0, "PARA CONSTANCIA SE FIRMA EN:",style);
-          sheet.addMergedRegion(new CellRangeAddress(61,61,0,12));
-          
-          
-          row=sheet.createRow(62);
+          sheet.addMergedRegion(new CellRangeAddress(74,74,0,12));
+//          
+//          
+          row=sheet.createRow(75);
           createCell(row, 0, "FECHA",style);
           createCell(row, 1, "DIA",style);
           createCell(row, 6, "DEL",style);
           createCell(row, 7, "AÑO",style);
-          sheet.addMergedRegion(new CellRangeAddress(62,62,2,5));
-          sheet.addMergedRegion(new CellRangeAddress(62,62,7,8));
-          sheet.addMergedRegion(new CellRangeAddress(62,62,9,12));
-          
-          
-          row=sheet.createRow(63);
+          sheet.addMergedRegion(new CellRangeAddress(75,75,2,5));
+          sheet.addMergedRegion(new CellRangeAddress(75,75,7,8));
+          sheet.addMergedRegion(new CellRangeAddress(75,75,9,12));
+//          
+//          
+          row=sheet.createRow(76);
           createCell(row, 0, "FIRMA DEL RECTOR",style);
-          sheet.addMergedRegion(new CellRangeAddress(63,68,0,12));
-
-          
-          row=sheet.createRow(69);
+          sheet.addMergedRegion(new CellRangeAddress(76,81,0,12));
+//
+//          
+          row=sheet.createRow(82);
           createCell(row, 0, "NOMBRES Y APELLIDOS DEL RECTOR",style);
-          sheet.addMergedRegion(new CellRangeAddress(69,69,1,12));
-                          
+          sheet.addMergedRegion(new CellRangeAddress(82,82,1,12));
+//                          
                      
 	}
 	
