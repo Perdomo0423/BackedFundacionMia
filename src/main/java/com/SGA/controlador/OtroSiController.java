@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.SGA.entidades.OtroSi;
+import com.SGA.entidades.Secretaria;
 import com.SGA.servicio.OtroSiService;
 
 
@@ -68,4 +69,8 @@ public class OtroSiController{
 		service.delete(id);
 	}
 	
+	@GetMapping(value ={"/contratista/{id_contratista}"})
+	public List<OtroSi> listarOtroSi(@PathVariable("id_contratista") Long id_contratista){
+		return service.listarOtroSi(id_contratista);
+	}
 }

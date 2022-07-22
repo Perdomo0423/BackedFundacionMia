@@ -1,3 +1,4 @@
+
 package com.SGA.entidades;
 
 import lombok.AllArgsConstructor;
@@ -23,6 +24,55 @@ public class Estudiante implements Serializable {
     
     @Id
     private Long numeroDocumento;
+    
+   
+    
+    @Column(name = "ano_inf")
+    private int anoInf;
+    
+    
+    @Column(name = "mun_codigo")
+    private int munCodigo;
+    
+    @Column(name = "municipio")
+    private String municipio;
+    
+    @Column(name = "codigo_dane")
+    private String codigoDane;
+    
+    @Column(name = "cons_sede")
+    private int consSede;
+    
+    @Column(name = "res_depto")
+    private String resDepto;
+    
+    @Column(name = "res_mun")
+    private String resMun;
+    
+    @Column(name = "estrato")
+    private String estrato;
+    
+    @Column(name = "sisben_IV",length = 10)
+    private String sisben;
+    
+    @Column(name = "pob_vict_conf")
+    private String pobVictConf;
+    
+    @Column(name = "res")
+    private String res;
+    
+    @Column(name = "caracter")
+    private String caracter;
+    
+    @Column(name = "especialidad",length = 50)
+    private String especialidad;
+    
+    @Column(name = "grupo")
+    private String grupo;
+    
+    @Column(name = "codigo_internado")
+    private String codigoInternado;
+    
 
     @Column(name = "estNombre1")
     private String nombre1;
@@ -32,7 +82,7 @@ public class Estudiante implements Serializable {
 
     @Column(name = "estApellido1")
     private String apellido1;
-
+ 
     @Column(name = "estApellido2")
     private String apellido2;
 
@@ -42,32 +92,15 @@ public class Estudiante implements Serializable {
     @Column(name = "estTelefono")
     private String telefono;
 
-    @Column(name = "estMunicipioRecidencia")
-    private String municipioRecidencia;
 
     @Column(name = "estFechaNacimiento")
     private String fechaNacimiento;
 
-    @Column(name = "estNacimientoDepartamento")
-    private String nacimientoDepartamento;
 
-    @Column(name = "estNacimientoMunicipio")
-    private String nacimientoMunicipio;
 
     @Column(name = "estGenero")
     private String genero;
 
-    @Column(name = "estAcudiente")
-    private String acudiente;
-
-    @Column(name = "estTelefonoAcudiente")
-    private String telefonoAcudiente;
-
-    @Column(name="reco_Facial")
-    private String facial;
-
-    @Column(name="reco_Huella")
-    private String huella;
 
     @Column(name = "fechaCreacio")
     @NotNull
@@ -84,7 +117,7 @@ public class Estudiante implements Serializable {
     private Sede unaSede;
 
     @ManyToOne
-    @JoinColumn(name = "idMunicipio")
+    @JoinColumn(name = "municipio_residencia")
     private Municipio unMunicipio;
 
     @ManyToOne
@@ -106,16 +139,6 @@ public class Estudiante implements Serializable {
     @Column(name = "estGrado")
     private String grado;
 
-    @ManyToOne
-    @JoinColumn(name = "idPais")
-    private Pais paisOrigen;
 
-    @ManyToOne
-    @JoinColumn(name = "idDirector")
-    private Usuario director;
-    
-    @ManyToOne(fetch = FetchType.EAGER, optional = false)
-	@JoinColumn(name = "id_beneficio", nullable = false)
-	private TipoBeneficio idBeneficio;
-
+   
 }

@@ -87,17 +87,17 @@ public class EstPdfExportar {
 			
 			for (Estudiante customer : customers) {
 			
-				PdfPCell municipioCell = new PdfPCell(new Phrase(String.valueOf(customer.getMunicipioRecidencia())));
-				municipioCell.setPaddingLeft(4);
-				municipioCell.setVerticalAlignment(Element.ALIGN_MIDDLE);
-				municipioCell.setBorder(0);
-				municipioCell.setPaddingBottom(0);
-				table.addCell(municipioCell);	
+//				PdfPCell municipioCell = new PdfPCell(new Phrase(String.valueOf(customer.getMunicipioRecidencia())));
+//				municipioCell.setPaddingLeft(4);
+//				municipioCell.setVerticalAlignment(Element.ALIGN_MIDDLE);
+//				municipioCell.setBorder(0);
+//				municipioCell.setPaddingBottom(0);
+//				table.addCell(municipioCell);	
 				
 				PdfPCell sedeCell = new PdfPCell(new Phrase(String.valueOf(customer.getUnaSede().getNombre())));
 				sedeCell.setPaddingLeft(4);
-				municipioCell.setVerticalAlignment(Element.ALIGN_MIDDLE);
-				municipioCell.setHorizontalAlignment(Element.ALIGN_CENTER);
+//				municipioCell.setVerticalAlignment(Element.ALIGN_MIDDLE);
+//				municipioCell.setHorizontalAlignment(Element.ALIGN_CENTER);
 				sedeCell.setBorder(0);
 				table.addCell(sedeCell);
 				
@@ -115,12 +115,12 @@ public class EstPdfExportar {
 				jornadaCell.setBorder(0);
 				table.addCell(jornadaCell);
 				
-				PdfPCell tipoAlimentacionCell = new PdfPCell(new Phrase(String.valueOf(customer.getIdBeneficio().getNombre())));
-				tipoAlimentacionCell.setPaddingLeft(4);
-				tipoAlimentacionCell.setVerticalAlignment(Element.ALIGN_MIDDLE);
-				tipoAlimentacionCell.setHorizontalAlignment(Element.ALIGN_CENTER);
-				tipoAlimentacionCell.setBorder(0);
-				table.addCell(tipoAlimentacionCell);
+//				PdfPCell tipoAlimentacionCell = new PdfPCell(new Phrase(String.valueOf(customer.getIdBeneficio().getNombre())));
+//				tipoAlimentacionCell.setPaddingLeft(4);
+//				tipoAlimentacionCell.setVerticalAlignment(Element.ALIGN_MIDDLE);
+//				tipoAlimentacionCell.setHorizontalAlignment(Element.ALIGN_CENTER);
+//				tipoAlimentacionCell.setBorder(0);
+//				table.addCell(tipoAlimentacionCell);
 				
 				PdfPCell etniaCell = new PdfPCell(new Phrase(String.valueOf(customer.getUnaEtnia().getNombre())));
 				etniaCell.setPaddingLeft(4);

@@ -156,7 +156,7 @@ public class AuthControlador {
 				+ "<a>se realizaron con exito.</a>"
 				+ "<br><b>       </b>"
 				+ "<br><b>       </b>"
-//				+ "<br><b>Usuario: </b>" + unUsuario.getUsername()
+				+ "<br><b>Usuario: </b>" + unUsuario.getUsername()
 				+ "<br><b>Correo: </b>" + unUsuario.getEmail()
 				+ "<br><b>ContraseÃ±a: </b>" + password
 				+ "<br><a>Una vez ingrese el usuario con la  contraseÃ±a, se sugiere realizar el cambio por </a>"

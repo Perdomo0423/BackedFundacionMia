@@ -396,7 +396,9 @@ public class ExcelImpl implements ExcelService {
             }
         }
     }
-
+    
+    
+    
     private void guardarDataEstudiantes(Sheet sheet) {
         List<String> tituloList = new ArrayList<String>();
         List iteracion = new ArrayList<>();
@@ -405,17 +407,38 @@ public class ExcelImpl implements ExcelService {
             if (row.getRowNum() == 0) {
                 for (int x = 0; x < 70; x++) {
                     String titulo = formatter.formatCellValue(row.getCell(x));
+                    if (("ANO_INF").equals(titulo)) {
+                      tituloList.add(titulo);
+                      System.out.println(titulo);
+                      iteracion.add(x);
+                  }
+                    if (("MUN_CODIGO").equals(titulo)) {
+                        tituloList.add(titulo);
+                        System.out.println(titulo);
+                        iteracion.add(x);
+                    }
+                  if (("MUNICIPIO").equals(titulo)) {
+                      tituloList.add(titulo);
+                      System.out.println(titulo);
+                      iteracion.add(x);
+                  }
                     if (("CODIGO_DANE").equals(titulo)) {
                         tituloList.add(titulo);
                         System.out.println(titulo);
                         iteracion.add(x);
                     }
+                    if (("INSTITUCION").equals(titulo)) {
+                      tituloList.add(titulo);
+                      System.out.println(titulo);
+                      iteracion.add(x);
+                  }
+
                     if (("CONS_SEDE").equals(titulo)) {
                         tituloList.add(titulo);
                         System.out.println(titulo);
                         iteracion.add(x);
                     }
-                    if (("MUN_CODIGO").equals(titulo)) {
+                    if (("SEDE").equals(titulo)) {
                         tituloList.add(titulo);
                         System.out.println(titulo);
                         iteracion.add(x);
@@ -430,16 +453,6 @@ public class ExcelImpl implements ExcelService {
                         System.out.println(titulo);
                         iteracion.add(x);
                     }
-                    if (("NOMBRE1").equals(titulo)) {
-                        tituloList.add(titulo);
-                        System.out.println(titulo);
-                        iteracion.add(x);
-                    }
-                    if (("NOMBRE2").equals(titulo)) {
-                        tituloList.add(titulo);
-                        System.out.println(titulo);
-                        iteracion.add(x);
-                    }
                     if (("APELLIDO1").equals(titulo)) {
                         tituloList.add(titulo);
                         System.out.println(titulo);
@@ -450,12 +463,24 @@ public class ExcelImpl implements ExcelService {
                         System.out.println(titulo);
                         iteracion.add(x);
                     }
+
+                    if (("NOMBRE1").equals(titulo)) {
+                        tituloList.add(titulo);
+                        System.out.println(titulo);
+                        iteracion.add(x);
+                    }
+                    if (("NOMBRE2").equals(titulo)) {
+                        tituloList.add(titulo);
+                        System.out.println(titulo);
+                        iteracion.add(x);
+                    }
+                   
                     if (("DIRECCION_RESIDENCIA").equals(titulo)) {
                         tituloList.add(titulo);
                         System.out.println(titulo);
                         iteracion.add(x);
                     }
-                    if (("RES_MUN").equals(titulo)) {
+                    if (("TEL").equals(titulo)) {
                         tituloList.add(titulo);
                         System.out.println(titulo);
                         iteracion.add(x);
@@ -465,17 +490,33 @@ public class ExcelImpl implements ExcelService {
                         System.out.println(titulo);
                         iteracion.add(x);
                     }
-                    if (("NAC_DEPTO").equals(titulo)) {
+                    if (("RES_MUN").equals(titulo)) {
                         tituloList.add(titulo);
                         System.out.println(titulo);
                         iteracion.add(x);
                     }
-                    if (("NAC_MUN").equals(titulo)) {
+                    if (("ESTRATO").equals(titulo)) {
                         tituloList.add(titulo);
                         System.out.println(titulo);
                         iteracion.add(x);
+                    }
+                    if (("SISBEN").equals(titulo)) {
+                        tituloList.add(titulo);
+                        System.out.println(titulo);
+                        iteracion.add(x);
+                    }
+                    if (("FECHA_NACIMIENTO").equals(titulo)) {
+                        tituloList.add(titulo);
+                        System.out.println(titulo);
+                        iteracion.add(x);
+
                     }
                     if (("GENERO").equals(titulo)) {
+                        tituloList.add(titulo);
+                        System.out.println(titulo);
+                        iteracion.add(x);
+                    }
+                    if (("POB_VICT_CONF").equals(titulo)) {
                         tituloList.add(titulo);
                         System.out.println(titulo);
                         iteracion.add(x);
@@ -490,7 +531,22 @@ public class ExcelImpl implements ExcelService {
                         System.out.println(titulo);
                         iteracion.add(x);
                     }
+                    if (("RES").equals(titulo)) {
+                        tituloList.add(titulo);
+                        System.out.println(titulo);
+                        iteracion.add(x);
+                    }
                     if (("TIPO_JORNADA").equals(titulo)) {
+                        tituloList.add(titulo);
+                        System.out.println(titulo);
+                        iteracion.add(x);
+                    }
+                    if (("CARACTER").equals(titulo)) {
+                        tituloList.add(titulo);
+                        System.out.println(titulo);
+                        iteracion.add(x);
+                    }
+                    if (("ESPECIALIDAD").equals(titulo)) {
                         tituloList.add(titulo);
                         System.out.println(titulo);
                         iteracion.add(x);
@@ -500,176 +556,228 @@ public class ExcelImpl implements ExcelService {
                         System.out.println(titulo);
                         iteracion.add(x);
                     }
-                    if (("PAIS_ORIGEN").equals(titulo)) {
+                    if (("GRUPO").equals(titulo)) {
                         tituloList.add(titulo);
                         System.out.println(titulo);
                         iteracion.add(x);
                     }
-                    if (("FECHA_NACIMIENTO").equals(titulo)) {
+                    if (("CODIGO_INTERNADO").equals(titulo)) {
                         tituloList.add(titulo);
                         System.out.println(titulo);
                         iteracion.add(x);
-
-                    }
-                    if (("TEL").equals(titulo)) {
-                        tituloList.add(titulo);
-                        System.out.println(titulo);
-                        iteracion.add(x);
-                    }
+                    }   
                 }
             }
 
-            Cell codigoDaneInstitucionCell = null;
-            Cell consecutivoSedeCell = null;
+            Cell anoInfCell = null;
             Cell codMunicipioCell = null;
+            Cell municipioCell = null;
+            Cell codigoDaneInstitucionCell = null;
+            Cell institucionCell = null;
+            Cell consecutivoSedeCell = null;
+            Cell sedeCell = null;
             Cell codTipoDocumentoCell = null;
             Cell numeroDocumentoCell = null;
-            Cell nombre1Cell = null;
-            Cell nombre2Cell = null;
             Cell apellido1Cell = null;
             Cell apellido2Cell = null;
+            Cell nombre1Cell = null;
+            Cell nombre2Cell = null;
             Cell direccionRecidenciaCell = null;
-            Cell codMunicipioRecidenciaCell = null;
+            Cell telefonoCell = null;
             Cell codDepartamentoResCell = null;
-            Cell codNacimientoDepartamentoCell = null;
-            Cell codNacimientoMunicipioCell = null;
+            Cell codMunicipioRecidenciaCell = null;
+            Cell estratoCell = null;
+            Cell sisbenCell = null;
+            Cell fechaNacimientoCell = null;
             Cell generoCell = null;
+            Cell pobVictConfCell = null;
             Cell CellcodDiscapacidad = null;
             Cell codEtniaCell = null;
+            Cell resCell = null;
             Cell codUnaJornadaCell = null;
+            Cell caracterCell = null;
+            Cell especialidadCell = null;
             Cell gradoCell = null;
-            Cell codPaisCell = null;
-            String fechaNacimiento = "";
-            String telefono = "";
+            Cell grupoCell = null;
+            Cell codInternadoCell = null;
             int contador = 0;
 
             if (row.getRowNum() > 0) {
                 for (String titulo : tituloList) {
+                	
+                	 if (("ANO_INF").equals(titulo)) {
+                		 anoInfCell = CellUtil.getCell(row, (int) iteracion.get(contador));
+                         System.out.println("1. " + anoInfCell);
+                     }
+                	 if (("MUN_CODIGO").equals(titulo)) {
+                		 codMunicipioCell = CellUtil.getCell(row, (int) iteracion.get(contador));
+                         System.out.println("2. " + codMunicipioCell);
+                     }
+                	 if (("MUNICIPIO").equals(titulo)) {
+                		 municipioCell = CellUtil.getCell(row, (int) iteracion.get(contador));
+                         System.out.println("3. " + municipioCell);
+                     }
                     if (("CODIGO_DANE").equals(titulo)) {
                         codigoDaneInstitucionCell = CellUtil.getCell(row, (int) iteracion.get(contador));
-                        System.out.println("1. " + codigoDaneInstitucionCell);
+                        System.out.println("4. " + codigoDaneInstitucionCell);
+                    }
+                    if (("INSTITUCION").equals(titulo)) {
+                    	institucionCell = CellUtil.getCell(row, (int) iteracion.get(contador));
+                        System.out.println("5. " + institucionCell);
                     }
                     if (("CONS_SEDE").equals(titulo)) {
                         consecutivoSedeCell = CellUtil.getCell(row, (int) iteracion.get(contador));
-                        System.out.println("2. " + consecutivoSedeCell);
+                        System.out.println("6. " + consecutivoSedeCell);
                     }
-                    if (("MUN_CODIGO").equals(titulo)) {
-                        codMunicipioCell = CellUtil.getCell(row, (int) iteracion.get(contador));
-                        System.out.println("3. " + codMunicipioCell);
+                    if (("SEDE").equals(titulo)) {
+                    	sedeCell = CellUtil.getCell(row, (int) iteracion.get(contador));
+                        System.out.println("7. " + sedeCell);
                     }
                     if (("TIPO_DOCUMENTO").equals(titulo)) {
                         codTipoDocumentoCell = CellUtil.getCell(row, (int) iteracion.get(contador));
-                        System.out.println("4. " + codTipoDocumentoCell);
+                        System.out.println("8. " + codTipoDocumentoCell);
                     }
                     if (("NRO_DOCUMENTO").equals(titulo)) {
                         numeroDocumentoCell = CellUtil.getCell(row, (int) iteracion.get(contador));
-                        System.out.println("5. " + numeroDocumentoCell);
-                    }
-                    if (("NOMBRE1").equals(titulo)) {
-                        nombre1Cell = CellUtil.getCell(row, (int) iteracion.get(contador));
-                        System.out.println("6. " + nombre1Cell);
-                    }
-                    if (("NOMBRE2").equals(titulo)) {
-                        nombre2Cell = CellUtil.getCell(row, (int) iteracion.get(contador));
-                        System.out.println("7. " + nombre2Cell);
+                        System.out.println("9. " + numeroDocumentoCell);
                     }
                     if (("APELLIDO1").equals(titulo)) {
                         apellido1Cell = CellUtil.getCell(row, (int) iteracion.get(contador));
-                        System.out.println("8. " + apellido1Cell);
+                        System.out.println("10. " + apellido1Cell);
                     }
                     if (("APELLIDO2").equals(titulo)) {
                         apellido2Cell = CellUtil.getCell(row, (int) iteracion.get(contador));
-                        System.out.println("9. " + apellido2Cell);
+                        System.out.println("11. " + apellido2Cell);
+                    }
+                    if (("NOMBRE1").equals(titulo)) {
+                        nombre1Cell = CellUtil.getCell(row, (int) iteracion.get(contador));
+                        System.out.println("12. " + nombre1Cell);
+                    }
+                    if (("NOMBRE2").equals(titulo)) {
+                        nombre2Cell = CellUtil.getCell(row, (int) iteracion.get(contador));
+                        System.out.println("13. " + nombre2Cell);
                     }
                     if (("DIRECCION_RESIDENCIA").equals(titulo)) {
                         direccionRecidenciaCell = CellUtil.getCell(row, (int) iteracion.get(contador));
-                        System.out.println("10. " + direccionRecidenciaCell);
+                        System.out.println("14. " + direccionRecidenciaCell);
                     }
-                    if (("RES_MUN").equals(titulo)) {
-                        codMunicipioRecidenciaCell = CellUtil.getCell(row, (int) iteracion.get(contador));
-                        System.out.println("11. " + codMunicipioRecidenciaCell);
+                    if (("TEL").equals(titulo)) {
+                        telefonoCell = CellUtil.getCell(row, (int) iteracion.get(contador));
+                        System.out.println("15. " + telefonoCell);
                     }
                     if (("RES_DEPTO").equals(titulo)) {
                         codDepartamentoResCell = CellUtil.getCell(row, (int) iteracion.get(contador));
-                        System.out.println("12. " + codDepartamentoResCell);
+                        System.out.println("16. " + codDepartamentoResCell);
                     }
-                    if (("NAC_DEPTO").equals(titulo)) {
-                        codNacimientoDepartamentoCell = CellUtil.getCell(row, (int) iteracion.get(contador));
-                        System.out.println("13. " + codNacimientoDepartamentoCell);
+                    if (("RES_MUN").equals(titulo)) {
+                        codMunicipioRecidenciaCell = CellUtil.getCell(row, (int) iteracion.get(contador));
+                        System.out.println("17. " + codMunicipioRecidenciaCell);
                     }
-                    if (("NAC_MUN").equals(titulo)) {
-                        codNacimientoMunicipioCell = CellUtil.getCell(row, (int) iteracion.get(contador));
-                        System.out.println("14. " + codNacimientoMunicipioCell);
+                    if (("ESTRATO").equals(titulo)) {
+                        estratoCell = CellUtil.getCell(row, (int) iteracion.get(contador));
+                        System.out.println("18. " + estratoCell);
+                    }
+                    if (("SISBEN").equals(titulo)) {
+                        sisbenCell = CellUtil.getCell(row, (int) iteracion.get(contador));
+                        System.out.println("19. " + sisbenCell);
+                    }
+                    if (("FECHA_NACIMIENTO").equals(titulo)) {
+                    	fechaNacimientoCell = CellUtil.getCell(row, (int) iteracion.get(contador));
+                        System.out.println("20. " + fechaNacimientoCell);
                     }
                     if (("GENERO").equals(titulo)) {
                         generoCell = CellUtil.getCell(row, (int) iteracion.get(contador));
-                        System.out.println("15. " + generoCell);
+                        System.out.println("21. " + generoCell);
+                    }
+                    if (("POB_VICT_CONF").equals(titulo)) {
+                        pobVictConfCell = CellUtil.getCell(row, (int) iteracion.get(contador));
+                        System.out.println("22. " + pobVictConfCell);
                     }
                     if (("TIPO_DISCAPACIDAD").equals(titulo)) {
                         CellcodDiscapacidad = CellUtil.getCell(row, (int) iteracion.get(contador));
-                        System.out.println("16. " + CellcodDiscapacidad);
+                        System.out.println("23. " + CellcodDiscapacidad);
                     }
                     if (("ETNIA").equals(titulo)) {
                         codEtniaCell = CellUtil.getCell(row, (int) iteracion.get(contador));
-                        System.out.println("17. " + codEtniaCell);
+                        System.out.println("24. " + codEtniaCell);
+                    }
+                    if (("RES").equals(titulo)) {
+                        resCell = CellUtil.getCell(row, (int) iteracion.get(contador));
+                        System.out.println("25. " + resCell);
                     }
                     if (("TIPO_JORNADA").equals(titulo)) {
                         codUnaJornadaCell = CellUtil.getCell(row, (int) iteracion.get(contador));
-                        System.out.println("18. " + codUnaJornadaCell);
+                        System.out.println("26. " + codUnaJornadaCell);
+                    }
+                    if (("CARACTER").equals(titulo)) {
+                        caracterCell = CellUtil.getCell(row, (int) iteracion.get(contador));
+                        System.out.println("27. " + caracterCell);
+                    }
+                    if (("ESPECIALIDAD").equals(titulo)) {
+                        especialidadCell = CellUtil.getCell(row, (int) iteracion.get(contador));
+                        System.out.println("28. " + especialidadCell);
                     }
                     if (("GRADO").equals(titulo)) {
                         gradoCell = CellUtil.getCell(row, (int) iteracion.get(contador));
-                        System.out.println("19. " + gradoCell);
+                        System.out.println("29. " + gradoCell);
                     }
-                    if (("PAIS_ORIGEN").equals(titulo)) {
-                        codPaisCell = CellUtil.getCell(row, (int) iteracion.get(contador));
-                        System.out.println("20. " + codPaisCell);
+                    if (("GRUPO").equals(titulo)) {
+                        grupoCell = CellUtil.getCell(row, (int) iteracion.get(contador));
+                        System.out.println("30. " + grupoCell);
                     }
-                    if (("FECHA_NACIMIENTO").equals(titulo)) {
-                        fechaNacimiento = formatter.formatCellValue(row.getCell((int) iteracion.get(contador)));
-                        System.out.println("21. " + fechaNacimiento);
+                    if (("CODIGO_INTERNADO").equals(titulo)) {
+                        codInternadoCell = CellUtil.getCell(row, (int) iteracion.get(contador));
+                        System.out.println("31. " + codInternadoCell);
                     }
-                    if (("TEL").equals(titulo)) {
-                        telefono = formatter.formatCellValue(row.getCell((int) iteracion.get(contador)));
-                        System.out.println("22. " + telefono);
-                    }
+
+                  
                     contador++;
                 }
             }
             if (row.getRowNum() > 0) {
                 System.out.println("....");
-                double codigoDaneInstitucion = codigoDaneInstitucionCell.getNumericCellValue();
-                double consecutivoSede = consecutivoSedeCell.getNumericCellValue();
+                double anoInf = anoInfCell.getNumericCellValue();
                 double codMunicipio = codMunicipioCell.getNumericCellValue();
+                String municipio = municipioCell.getStringCellValue();
+                String codigoDaneInstitucion = codigoDaneInstitucionCell.getStringCellValue();
+                String institucion = institucionCell.getStringCellValue();
+                double consecutivoSede = consecutivoSedeCell.getNumericCellValue();
+                String sede = sedeCell.getStringCellValue();
                 double codTipoDocumento = codTipoDocumentoCell.getNumericCellValue();
                 double numeroDocumento = numeroDocumentoCell.getNumericCellValue();
-                String nombre1 = nombre1Cell.getStringCellValue();
-                String nombre2 = nombre2Cell.getStringCellValue();
                 String apellido1 = apellido1Cell.getStringCellValue();
                 String apellido2 = apellido2Cell.getStringCellValue();
+                String nombre1 = nombre1Cell.getStringCellValue();
+                String nombre2 = nombre2Cell.getStringCellValue();
                 String direccionRecidencia = direccionRecidenciaCell.getStringCellValue();
+                String telefono = telefonoCell.getStringCellValue();
+                String codDepartamentoRes = codDepartamentoResCell.getStringCellValue();
                 double codMunicipioRecidencia = codMunicipioRecidenciaCell.getNumericCellValue();
-                double codNacimientoDepartamento = codNacimientoDepartamentoCell.getNumericCellValue();
-                double codNacimientoMunicipio = codNacimientoMunicipioCell.getNumericCellValue();
+                String estrato = estratoCell.getStringCellValue();
+                String sisben = sisbenCell.getStringCellValue();
+                String fechaNaciemineto = fechaNacimientoCell.getStringCellValue();
                 String genero = generoCell.getStringCellValue();
+                String pobVictConf = pobVictConfCell.getStringCellValue();
                 double codDiscapacidad = CellcodDiscapacidad.getNumericCellValue();
                 double codEtnia = codEtniaCell.getNumericCellValue();
+                String res = resCell.getStringCellValue();
                 double codUnaJornada = codUnaJornadaCell.getNumericCellValue();
-                double grado = gradoCell.getNumericCellValue();
-                double codPais = codPaisCell.getNumericCellValue();
-                double codDepartamentoRes = codDepartamentoResCell.getNumericCellValue();
+                String caracter = caracterCell.getStringCellValue();
+                String especialidad = especialidadCell.getStringCellValue();
+                String grado = gradoCell.getStringCellValue();
+                String grupo = grupoCell.getStringCellValue();
+                String codInternado = codInternadoCell.getStringCellValue();
+
+
                 long codigoDaneInstitucionLong = (new Double(codigoDaneInstitucion)).longValue();
                 long numeroDocumentoLong = (new Double(numeroDocumento)).longValue();
                 long consecutivoSedeLong = (new Double(consecutivoSede)).longValue();
                 long codMunicipioLong = (new Double(codMunicipio)).longValue();
                 long codTipoDocumentoLong = (new Double(codTipoDocumento)).longValue();
                 long codMunicipioRecidenciaLong = (new Double(codMunicipioRecidencia)).longValue();
-                long codNacimientoDepartamentoLong = (new Double(codNacimientoDepartamento)).longValue();
-                long codNacimientoMunicipioLong = (new Double(codNacimientoMunicipio)).longValue();
                 long codDiscapacidadLong = (new Double(codDiscapacidad)).longValue();
                 long codEtniaLong = (new Double(codEtnia)).longValue();
                 long codUnaJornadaLong = (new Double(codUnaJornada)).longValue();
-                long codPaisLong = (new Double(codPais)).longValue();
                 long codDepartamentoLong = (new Double(codDepartamentoRes)).longValue();
                 Boolean bol = estudianteRepository.existsByNumeroDocumento(numeroDocumentoLong);
                 if (bol != true) {
@@ -684,33 +792,53 @@ public class ExcelImpl implements ExcelService {
                     TipoDocumento unTipoDocumento = tipDocRepository.findByCodigo((int) codTipoDocumentoLong);
                     unEstudiante.setUnTipoDocumento(unTipoDocumento);
                     unEstudiante.setNumeroDocumento(numeroDocumentoLong);
-                    unEstudiante.setNombre1(nombre1);
-                    unEstudiante.setNombre2(nombre2);
+                    
+//                    unEstudiante.setAnoInf(anoInf);
+                    unEstudiante.setMunicipio(municipio);
+                    unEstudiante.setCodigoDane(codigoDaneInstitucion);
+//                    unEstudiante.setNumeroDocumento(numeroDocumento);
                     unEstudiante.setApellido1(apellido1);
                     unEstudiante.setApellido2(apellido2);
+                    unEstudiante.setNombre1(nombre1);
+                    unEstudiante.setNombre2(nombre2);
+                    unEstudiante.setResDepto(codDepartamentoRes);
+                    unEstudiante.setEstrato(estrato);
+                    unEstudiante.setSisben(sisben);
+                    unEstudiante.setFechaNacimiento(fechaNaciemineto);
                     unEstudiante.setGenero(genero);
-                    unEstudiante.setDireccionRecidencia(direccionRecidencia);
-                    unEstudiante.setTelefono("" + telefono);
+                    unEstudiante.setPobVictConf(pobVictConf);
+                    unEstudiante.setRes(res);
+                    unEstudiante.setCaracter(caracter);
+                    unEstudiante.setEspecialidad(especialidad);
+                    unEstudiante.setGrado(grado);
+                    unEstudiante.setGrupo(grupo);
+                    unEstudiante.setCodigoInternado(codInternado);
+                    unEstudiante.setTelefono("" + telefonoCell);
+
+
+                 
+                    unEstudiante.setGenero(genero);
                     Municipio unMunicipioRecidencia = municipioRepository.findByCodigoAndUnDepartamentoCodigo(
                             (int) codMunicipioRecidenciaLong, (int) codDepartamentoLong);
-                    unEstudiante.setMunicipioRecidencia(unMunicipioRecidencia.getNombre());
-                    unEstudiante.setFechaNacimiento(fechaNacimiento);
-                    Municipio unMunicipioNacimiento = municipioRepository.findByCodigoAndUnDepartamentoCodigo(
-                            (int) codNacimientoMunicipioLong, (int) codNacimientoDepartamentoLong);
-                    unEstudiante.setNacimientoMunicipio(unMunicipioNacimiento.getNombre());
-                    Departamento unDepartamento = departamentoRepository
-                            .findByCodigo((int) codNacimientoDepartamentoLong);
-                    unEstudiante.setNacimientoDepartamento(unDepartamento.getNombre());
+                    unEstudiante.setResMun(unMunicipioRecidencia.getNombre());
+                    unEstudiante.setFechaNacimiento(""+ fechaNacimientoCell);
+//                    Municipio unMunicipioNacimiento = municipioRepository.findByCodigoAndUnDepartamentoCodigo(
+//                            (int) codNacimientoMunicipioLong, (int) codNacimientoDepartamentoLong);
+//                    unEstudiante.setNacimientoMunicipio(unMunicipioNacimiento.getNombre());
+//                    Departamento unDepartamento = departamentoRepository
+                    
+//                            .findByCodigo((int) codNacimientoDepartamentoLong);
+//                    unEstudiante.setNacimientoDepartamento(unDepartamento.getNombre());
                     TipoDiscapacidad unTipoDiscapacidad = tipoDiscapacidadRepository
                             .findByCodigo(codDiscapacidadLong);
                     unEstudiante.setUnaDiscapacidad(unTipoDiscapacidad);
                     Etnia unaEtnia = etniaRepository.findByCodigo(codEtniaLong);
                     unEstudiante.setUnaEtnia(unaEtnia);
-                    unEstudiante.setGrado("" + (int) grado);
+                    unEstudiante.setGrado(grado);
                     Jornada unaJornada = jornadaRepository.findByCodigo(codUnaJornadaLong);
                     unEstudiante.setUnaJornada(unaJornada);
-                    Pais unPais = paisRepository.findByCodigo((int) codPaisLong);
-                    unEstudiante.setPaisOrigen(unPais);
+//                    Pais unPais = paisRepository.findByCodigo((int) codPaisLong);
+//                    unEstudiante.setPaisOrigen(unPais);
                     estudianteRepository.save(unEstudiante);
                 } else {
                     Estudiante unEstudiante = estudianteRepository.findByNumeroDocumento(numeroDocumentoLong);
@@ -723,41 +851,62 @@ public class ExcelImpl implements ExcelService {
                     unEstudiante.setUnMunicipio(unMunicipio);
                     TipoDocumento unTipoDocumento = tipDocRepository.findByCodigo((int) codTipoDocumentoLong);
                     unEstudiante.setUnTipoDocumento(unTipoDocumento);
-                    unEstudiante.setNombre1(nombre1);
-                    unEstudiante.setNombre2(nombre2);
+                    unEstudiante.setNumeroDocumento(numeroDocumentoLong);
+                    
+//                    unEstudiante.setAnoInf(anoInf);
+                    unEstudiante.setMunicipio(municipio);
+                    unEstudiante.setCodigoDane(codigoDaneInstitucion);
+//                    unEstudiante.setNumeroDocumento(numeroDocumento);
                     unEstudiante.setApellido1(apellido1);
                     unEstudiante.setApellido2(apellido2);
+                    unEstudiante.setNombre1(nombre1);
+                    unEstudiante.setNombre2(nombre2);
+                    unEstudiante.setResDepto(codDepartamentoRes);
+                    unEstudiante.setEstrato(estrato);
+                    unEstudiante.setSisben(sisben);
+                    unEstudiante.setFechaNacimiento(fechaNaciemineto);
                     unEstudiante.setGenero(genero);
-                    unEstudiante.setDireccionRecidencia(direccionRecidencia);
-                    unEstudiante.setTelefono("" + telefono);
+                    unEstudiante.setPobVictConf(pobVictConf);
+                    unEstudiante.setRes(res);
+                    unEstudiante.setCaracter(caracter);
+                    unEstudiante.setEspecialidad(especialidad);
+                    unEstudiante.setGrado(grado);
+                    unEstudiante.setGrupo(grupo);
+                    unEstudiante.setCodigoInternado(codInternado);
+                    unEstudiante.setTelefono("" + telefonoCell);
+
+
+                 
+                    unEstudiante.setGenero(genero);
                     Municipio unMunicipioRecidencia = municipioRepository.findByCodigoAndUnDepartamentoCodigo(
                             (int) codMunicipioRecidenciaLong, (int) codDepartamentoLong);
-                    unEstudiante.setMunicipioRecidencia(unMunicipioRecidencia.getNombre());
-                    unEstudiante.setFechaNacimiento(fechaNacimiento);
-                    System.out.println((int) codNacimientoMunicipioLong + "- " + (int) codDepartamentoLong);
-                    Municipio unMunicipioNacimiento = municipioRepository.findByCodigoAndUnDepartamentoCodigo(
-                            (int) codNacimientoMunicipioLong, (int) codNacimientoDepartamentoLong);
+                    unEstudiante.setResMun(unMunicipioRecidencia.getNombre());
+                    unEstudiante.setFechaNacimiento(""+fechaNacimientoCell);
+//                    System.out.println((int) codNacimientoMunicipioLong + "- " + (int) codDepartamentoLong);
+//                    Municipio unMunicipioNacimiento = municipioRepository.findByCodigoAndUnDepartamentoCodigo(
+//                            (int) codNacimientoMunicipioLong, (int) codNacimientoDepartamentoLong);
 
-                    unEstudiante.setNacimientoMunicipio(unMunicipioNacimiento.getNombre());
-                    Departamento unDepartamento = departamentoRepository
-                            .findByCodigo((int) codNacimientoDepartamentoLong);
-                    unEstudiante.setNacimientoDepartamento(unDepartamento.getNombre());
+//                    unEstudiante.setNacimientoMunicipio(unMunicipioNacimiento.getNombre());
+//                    Departamento unDepartamento = departamentoRepository
+//                            .findByCodigo((int) codNacimientoDepartamentoLong);
+//                    unEstudiante.setNacimientoDepartamento(unDepartamento.getNombre());
                     TipoDiscapacidad unTipoDiscapacidad = tipoDiscapacidadRepository
                             .findByCodigo(codDiscapacidadLong);
                     unEstudiante.setUnaDiscapacidad(unTipoDiscapacidad);
                     Etnia unaEtnia = etniaRepository.findByCodigo(codEtniaLong);
                     unEstudiante.setUnaEtnia(unaEtnia);
-                    unEstudiante.setGrado("" + (int) grado);
+                    unEstudiante.setGrado(grado);
                     Jornada unaJornada = jornadaRepository.findByCodigo(codUnaJornadaLong);
                     unEstudiante.setUnaJornada(unaJornada);
-                    Pais unPais = paisRepository.findByCodigo((int) codPaisLong);
-                    unEstudiante.setPaisOrigen(unPais);
+//                    Pais unPais = paisRepository.findByCodigo((int) codPaisLong);
+//                    unEstudiante.setPaisOrigen(unPais);
                     estudianteRepository.save(unEstudiante);
                 }
 
             }
         }
     }
+
 
     @Override
     public ResponseEntity<?> saveExcel(MultipartFile files, String type) throws IOException, InvalidFormatException {
@@ -777,7 +926,7 @@ public class ExcelImpl implements ExcelService {
                     this.guardarDataMunicipios(sheet);
                     break;
 
-                case "instituciones":
+                case "institucio  nes":
                     this.guardarDataInstituciones(sheet);
                     break;
 
@@ -793,3 +942,5 @@ public class ExcelImpl implements ExcelService {
         return new ResponseEntity<Object>("Archivo creado correctamente", HttpStatus.CREATED);
     }
 }
+
+

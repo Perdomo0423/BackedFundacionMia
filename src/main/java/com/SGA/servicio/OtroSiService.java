@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Optional;
 
 import com.SGA.entidades.OtroSi;
+import com.SGA.entidades.Secretaria;
 
 public interface OtroSiService {
 	
@@ -14,4 +15,6 @@ public interface OtroSiService {
 	public OtroSi save(OtroSi otro);
 	
 	public void delete(Long id);
+	
+	List<OtroSi> listarOtroSi(Long id_contratista);
 }

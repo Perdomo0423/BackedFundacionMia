@@ -34,5 +34,10 @@ public class OtroSiImp implements OtroSiService{
 	@Override
 	public void delete(Long id) {
 		this.repository.deleteById(id);		
+	}
+
+	@Override
+	public List<OtroSi> listarOtroSi(Long id_contratista) {
+		return repository.listOtroSi(id_contratista);
 	}	
 }
