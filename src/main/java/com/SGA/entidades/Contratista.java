@@ -48,11 +48,17 @@ public class Contratista implements Serializable {
 	@Column(name = "fecha_suscripcion",  length = 20, nullable = false)
 	private String fechaSuscripcion;
 	
-	@Column(name = "cantidad_complemento", length = 30, nullable = false)
-	private int cantidadComplemento;
+	@Column(name = "cantidad_complemento_am", length = 30, nullable = false)
+	private int cantidadComplementoAm;
 	 
-	@Column(name = "costo_complemento", length = 30, nullable = false)
-	private int costoComplemento;
+	@Column(name = "costo_complemento_am", length = 30, nullable = false)
+	private int costoComplementoAm;
+	
+	@Column(name = "cantidad_complemento_pm", length = 30, nullable = false)
+	private int cantidadComplementoPm;
+	 
+	@Column(name = "costo_complemento_pm", length = 30, nullable = false)
+	private int costoComplementoPm;
 	
 	@Column(name = "cantidad_almuerzo", length = 30, nullable = false)
 	private int cantidadAlmuerzo;

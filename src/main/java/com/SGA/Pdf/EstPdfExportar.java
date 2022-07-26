@@ -94,26 +94,26 @@ public class EstPdfExportar {
 //				municipioCell.setPaddingBottom(0);
 //				table.addCell(municipioCell);	
 				
-				PdfPCell sedeCell = new PdfPCell(new Phrase(String.valueOf(customer.getUnaSede().getNombre())));
-				sedeCell.setPaddingLeft(4);
-//				municipioCell.setVerticalAlignment(Element.ALIGN_MIDDLE);
-//				municipioCell.setHorizontalAlignment(Element.ALIGN_CENTER);
-				sedeCell.setBorder(0);
-				table.addCell(sedeCell);
+//				PdfPCell sedeCell = new PdfPCell(new Phrase(String.valueOf(customer.getUnaSede().getNombre())));
+//				sedeCell.setPaddingLeft(4);
+////				municipioCell.setVerticalAlignment(Element.ALIGN_MIDDLE);
+////				municipioCell.setHorizontalAlignment(Element.ALIGN_CENTER);
+//				sedeCell.setBorder(0);
+//				table.addCell(sedeCell);
+//				
+//				PdfPCell institucionCell = new PdfPCell(new Phrase(String.valueOf(customer.getUnaInstitucion().getNombre())));
+//				institucionCell.setPaddingLeft(4);
+//				sedeCell.setVerticalAlignment(Element.ALIGN_MIDDLE);
+//				sedeCell.setHorizontalAlignment(Element.ALIGN_CENTER);
+//				institucionCell.setBorder(0);
+//				table.addCell(institucionCell);
 				
-				PdfPCell institucionCell = new PdfPCell(new Phrase(String.valueOf(customer.getUnaInstitucion().getNombre())));
-				institucionCell.setPaddingLeft(4);
-				sedeCell.setVerticalAlignment(Element.ALIGN_MIDDLE);
-				sedeCell.setHorizontalAlignment(Element.ALIGN_CENTER);
-				institucionCell.setBorder(0);
-				table.addCell(institucionCell);
-				
-				PdfPCell jornadaCell = new PdfPCell(new Phrase(String.valueOf(customer.getUnaJornada().getNombre())));
-				jornadaCell.setPaddingLeft(4);
-				jornadaCell.setVerticalAlignment(Element.ALIGN_MIDDLE);
-				jornadaCell.setHorizontalAlignment(Element.ALIGN_CENTER);
-				jornadaCell.setBorder(0);
-				table.addCell(jornadaCell);
+//				PdfPCell jornadaCell = new PdfPCell(new Phrase(String.valueOf(customer.getUnaJornada().getNombre())));
+//				jornadaCell.setPaddingLeft(4);
+//				jornadaCell.setVerticalAlignment(Element.ALIGN_MIDDLE);
+//				jornadaCell.setHorizontalAlignment(Element.ALIGN_CENTER);
+//				jornadaCell.setBorder(0);
+//				table.addCell(jornadaCell);
 				
 //				PdfPCell tipoAlimentacionCell = new PdfPCell(new Phrase(String.valueOf(customer.getIdBeneficio().getNombre())));
 //				tipoAlimentacionCell.setPaddingLeft(4);
@@ -122,12 +122,12 @@ public class EstPdfExportar {
 //				tipoAlimentacionCell.setBorder(0);
 //				table.addCell(tipoAlimentacionCell);
 				
-				PdfPCell etniaCell = new PdfPCell(new Phrase(String.valueOf(customer.getUnaEtnia().getNombre())));
-				etniaCell.setPaddingLeft(4);
-				etniaCell.setVerticalAlignment(Element.ALIGN_MIDDLE);
-				etniaCell.setHorizontalAlignment(Element.ALIGN_CENTER);
-				etniaCell.setBorder(0);
-				table.addCell(etniaCell);
+//				PdfPCell etniaCell = new PdfPCell(new Phrase(String.valueOf(customer.getUnaEtnia().getNombre())));
+//				etniaCell.setPaddingLeft(4);
+//				etniaCell.setVerticalAlignment(Element.ALIGN_MIDDLE);
+//				etniaCell.setHorizontalAlignment(Element.ALIGN_CENTER);
+//				etniaCell.setBorder(0);
+//				table.addCell(etniaCell);
 				
 				
 				PdfPCell nombreCell = new PdfPCell(new Phrase(String.valueOf(customer.getNombre1())));

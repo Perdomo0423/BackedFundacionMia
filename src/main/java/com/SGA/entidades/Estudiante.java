@@ -28,11 +28,11 @@ public class Estudiante implements Serializable {
    
     
     @Column(name = "ano_inf")
-    private int anoInf;
+    private String anoInf;
     
     
     @Column(name = "mun_codigo")
-    private int munCodigo;
+    private String munCodigo;
     
     @Column(name = "municipio")
     private String municipio;
@@ -41,7 +41,7 @@ public class Estudiante implements Serializable {
     private String codigoDane;
     
     @Column(name = "cons_sede")
-    private int consSede;
+    private String consSede;
     
     @Column(name = "res_depto")
     private String resDepto;
@@ -107,38 +107,25 @@ public class Estudiante implements Serializable {
     @Temporal(TemporalType.DATE)
     @DateTimeFormat(pattern = "yyyy-mm-dd")
     private Date fechaCreacion;
-
-    @ManyToOne
-    @JoinColumn(name = "idInstitucion")
-    private Institucion unaInstitucion;
-
-    @ManyToOne
-    @JoinColumn(name = "idSede")
-    private Sede unaSede;
-
-    @ManyToOne
-    @JoinColumn(name = "municipio_residencia")
-    private Municipio unMunicipio;
-
-    @ManyToOne
-    @JoinColumn(name = "idTipoDocumento")
-    private TipoDocumento unTipoDocumento;
-
-    @ManyToOne
-    @JoinColumn(name = "idTipoDiscapacidad")
-    private TipoDiscapacidad unaDiscapacidad;
-
-    @ManyToOne
-    @JoinColumn(name = "idEtnia")
-    private Etnia unaEtnia;
-
-    @ManyToOne()
-    @JoinColumn(name = "idJornada")
-    private Jornada unaJornada;
-
+    
+    
+    @Column(name = "id_institucion")
+    private String idInstitucion;
+    
+    @Column(name = "id_tipo_documento")
+    private String idTipoDocumento;
+    
+    @Column(name = "id_discapcidad")
+    private String idDiscapacidad;
+    
+    @Column(name = "id_etnia")
+    private String idEtnia;
+    
+    @Column(name = "id_jornada")
+    private String idJornada;
+    
     @Column(name = "estGrado")
     private String grado;
-
-
+    
    
 }
