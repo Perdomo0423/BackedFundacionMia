@@ -17,7 +17,7 @@ public interface HuellaRepository extends JpaRepository<Huella, Long>{
   */ 
   Optional<Huella> findByHuella(String username);
     
-    Optional<Huella>  findByNombreAndHuella(String nombre, Blob huella);
+//    Optional<Huella>  findByNombreAndHuella(String nombre, Blob huella);
 
     List<Huella> findAll();
 }

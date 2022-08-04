@@ -6,6 +6,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import org.apache.poi.ss.usermodel.Cell;
+import org.hibernate.annotations.NaturalId;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import io.swagger.models.auth.In;
@@ -30,7 +31,7 @@ public class Estudiante implements Serializable{
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long idEstudainte;
 
-
+	@NaturalId
 	@Column(name="numero_documento", unique = true)
 	private String  numeroDocumento;
 
@@ -135,7 +136,7 @@ public class Estudiante implements Serializable{
     @OneToOne(fetch = FetchType.EAGER, optional = true)
     @JoinColumn(name = "id_pob_vic_conf", nullable = true)
 	private PobVicConf  idPobVicConf;
-    
+
     
     
    

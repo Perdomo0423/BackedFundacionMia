@@ -52,6 +52,11 @@ public  class EstudianteImp implements EstudianteService {
 		return estudianteRepository.listEstudianteGenero(est_genero, id_sede);
 	}
 
+	@Override
+	public List<Estudiante> all() {
+		return this.estudianteRepository.findAll();
+	}
+
 
 
 	/*@Override

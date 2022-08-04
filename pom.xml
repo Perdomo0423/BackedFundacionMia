@@ -9,6 +9,7 @@
 		<version>2.6.3</version>
 		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
+	
 	<groupId>com.sistema.blog</groupId>
 	<artifactId>sistema-blog-spring-boot-api-rest</artifactId>
 	<version>0.0.1-SNAPSHOT</version>

@@ -792,9 +792,7 @@ public class ExcelImpl implements ExcelService {
                     int codMunicipioRecidencia = (int)codMunicipioRecidenciaCell.getNumericCellValue() ;
                     int estrato = (int) estratoCell.getNumericCellValue();
                     Date fechaNaciemineto = fechaNacimientoCell.getDateCellValue();
-                    String genero = generoCell.getStringCellValue();
-//                    int pobVictConf = (int)pobVictConfCell.getNumericCellValue();
-                    
+                    String genero = generoCell.getStringCellValue();                    
                     int pobVicConf = (int)pobVictConfCell.getNumericCellValue();
                     Long codDiscapacidad = (long) CellcodDiscapacidad.getNumericCellValue();
                     Long codEtnia = (long) codEtniaCell.getNumericCellValue();
@@ -941,158 +939,165 @@ public class ExcelImpl implements ExcelService {
 
 //  __________________________________________________________________________________________________
 
-//    int c = 0;
-//    private void guardarDataBeneficiarios(Sheet sheet) {
-//        List<String> tituloList = new ArrayList<String>();
-//        List iteracion = new ArrayList<>();
-//        for (Row row : sheet) {
-//            DataFormatter formatter = new DataFormatter();
-//            if (row.getRowNum() == 0) {
-//                for (int x = 0; x < 70; x++) {
-//                    String titulo = formatter.formatCellValue(row.getCell(x));
-//                    if (("NRO_DOCUMENTO").equals(titulo)) {
-//                      tituloList.add(titulo);
-//                      System.out.println(titulo);
-//                      iteracion.add(x);
-//                  }
-//                    if (("NOMBRE_ESTRATEGIA").equals(titulo)) {
-//                        tituloList.add(titulo);
-//                        System.out.println(titulo);
-//                        iteracion.add(x);
-//                    }
-//                  if (("TIPO_ESTRATEGIA").equals(titulo)) {
-//                      tituloList.add(titulo);
-//                      System.out.println(titulo);
-//                      iteracion.add(x);
-//                  }
-//                    if (("ESTRATEGIA_SUBTIPO").equals(titulo)) {
-//                        tituloList.add(titulo);
-//                        System.out.println(titulo);
-//                        iteracion.add(x);
-//                    }
-//                    if (("FECHA_INICIO_ESTRATEGIA").equals(titulo)) {
-//                      tituloList.add(titulo);
-//                      System.out.println(titulo);
-//                      iteracion.add(x);
-//                  }
-//
-//                    if (("FECHA_FIN_ESTRATEGIA").equals(titulo)) {
-//                        tituloList.add(titulo);
-//                        System.out.println(titulo);
-//                        iteracion.add(x);
-//                    }
-//                    if (("FECHA_INICIO_ESTRATEGIA_ALUMNO").equals(titulo)) {
-//                        tituloList.add(titulo);
-//                        System.out.println(titulo);
-//                        iteracion.add(x);
-//                    }
-//                    if (("FECHA_FIN_ESTRATEGIA_ALUMNO").equals(titulo)) {
-//                        tituloList.add(titulo);
-//                        System.out.println(titulo);
-//                        iteracion.add(x);
-//                    }
-//                    
-//                }
-//            }
-//
-//            Cell documentoCell = null;
-//            Cell nombreEstrategiaCell = null;
-//            Cell tipoEstrategiaCell = null;
-//            Cell subtipoCell = null;
-//            Cell fechaInicioCell = null;
-//            Cell fechaFinCell = null;
-//            Cell fechaInicioAlumCell = null;
-//            Cell fechaFinAlumCell = null;
-//           
-//            int contador = 0;
-//
-//            if (row.getRowNum() > 0) {
-//                for (String titulo : tituloList) {
-//                	
-//                	 if (("NRO_DOCUMENTO").equals(titulo)) {
-//                		 documentoCell = CellUtil.getCell(row, (int) iteracion.get(contador));
-//                     }
-//                	 if (("NOMBRE_ESTRATEGIA").equals(titulo)) {
-//                		 nombreEstrategiaCell = CellUtil.getCell(row, (int) iteracion.get(contador));
-//                     }
-//                	 if (("TIPO_ESTRATEGIA").equals(titulo)) {
-//                		 tipoEstrategiaCell = CellUtil.getCell(row, (int) iteracion.get(contador));
-//                     }
-//                	 if (("ESTRATEGIA_SUBTIPO").equals(titulo)) {
-//                		 subtipoCell = CellUtil.getCell(row, (int) iteracion.get(contador));
-//                    }
-//                    if (("FECHA_INICIO_ESTRATEGIA").equals(titulo)) {
-//                    	fechaInicioCell = CellUtil.getCell(row, (int) iteracion.get(contador));
-//                    }
-//                    if (("FECHA_FIN_ESTRATEGIA").equals(titulo)) {
-//                    	fechaFinCell = CellUtil.getCell(row, (int) iteracion.get(contador));
-//                    }
-//                    if (("FECHA_INICIO_ESTRATEGIA_ALUMNO").equals(titulo)) {
-//                    	fechaInicioAlumCell = CellUtil.getCell(row, (int) iteracion.get(contador));
-//                    }
-//                    if (("FECHA_FIN_ESTRATEGIA_ALUMNO").equals(titulo)) {
-//                    	fechaFinAlumCell = CellUtil.getCell(row, (int) iteracion.get(contador));
-//                    }
-//                   
-//                    contador++;
-//                }
-//            }
-//            try {
-//            	if (row.getRowNum() > 0) {
-//                    System.out.println("....");
-//                    String documento = String.valueOf(documentoCell.getNumericCellValue());
-//                    String nombreEstrategia = nombreEstrategiaCell.getStringCellValue();
-//                    String tipoEstrategia= tipoEstrategiaCell.getStringCellValue();
-//                    String subtipo= subtipoCell.getStringCellValue();
-//                    Date fehaInicio = fechaInicioCell.getDateCellValue();
-//                    Date fechaFin= fechaFinCell.getDateCellValue();
-//                    Date fechaInicioAlumno= fechaInicioAlumCell.getDateCellValue();
-//                    Date fechaFinAlumno = fechaFinAlumCell.getDateCellValue();
-//                    
-//                   
-//                    long numeroDoctoLong = (new Double(documento)).longValue();
-//
-//                    Boolean bol = beneficiarioRepository.existsByNumeroDocumento(numeroDoctoLong);
-//                    if (bol != true) {
-//                    	c=c+1;
-//                    Beneficiario ben = new Beneficiario();
-//                    
-//                    	Estudiante unEstudiante = estudianteRepository.findByNumeroDocumento(numeroDoctoLong);
-////                    	ben.setNumDocumento(unEstudiante);
-////                    	ben.setNumeroDocumento(documento);
-//                    	ben.setNombreEstrategia(nombreEstrategia);
-//                    	ben.setTipoEstrategia(tipoEstrategia);
-//                    	ben.setEstrategiaSubtipo(subtipo);
-//                    	ben.setFechaInicioEstrategia(fehaInicio);
-//                    	ben.setFechaFinEstrategia(fechaFin);
-//                    	ben.setFechaInicioEstrategiaAlumno(fechaInicioAlumno);
-//                    	ben.setFechaFinEstrategiaAlumno(fechaFinAlumno); 
-//   				 		beneficiarioRepository.save(ben);
-//                        System.out.println("AAAAAAAAAAAAAAAAA");
-//                    } else {
-//
-//                        Beneficiario ben = beneficiarioRepository.findByNumeroDocumento(numeroDoctoLong);
-//                        Estudiante unEstudiante = estudianteRepository.findByNumeroDocumento(numeroDoctoLong);
-//                    	ben.setNombreEstrategia(nombreEstrategia);
-//                    	ben.setTipoEstrategia(tipoEstrategia);
-//                    	ben.setEstrategiaSubtipo(subtipo);
-//                    	ben.setFechaInicioEstrategia(fehaInicio);
-//                    	ben.setFechaFinEstrategia(fechaFin);
-//                    	ben.setFechaInicioEstrategiaAlumno(fechaInicioAlumno);
-//                    	ben.setFechaFinEstrategiaAlumno(fechaFinAlumno);
-//   				 		beneficiarioRepository.save(ben);
-//                    }
-//
-//                }
-//            	System.out.println("todo bien");
-//				
-//			} catch (Exception e) {
-//				System.out.println(e);
-//			}
-//            
-//            
-//        }
-//    }
+
+    private void guardarDataBeneficiarios(Sheet sheet) {
+        List<String> tituloList = new ArrayList<String>();
+        List iteracion = new ArrayList<>();
+        for (Row row : sheet) {
+            DataFormatter formatter = new DataFormatter();
+            if (row.getRowNum() == 0) {
+                for (int x = 0; x < 70; x++) {
+                    String titulo = formatter.formatCellValue(row.getCell(x));
+                    if (("NRO_DOCUMENTO").equals(titulo)) {
+                      tituloList.add(titulo);
+                      System.out.println(titulo);
+                      iteracion.add(x);
+                  }
+                    if (("NOMBRE_ESTRATEGIA").equals(titulo)) {
+                        tituloList.add(titulo);
+                        System.out.println(titulo);
+                        iteracion.add(x);
+                    }
+                  if (("TIPO_ESTRATEGIA").equals(titulo)) {
+                      tituloList.add(titulo);
+                      System.out.println(titulo);
+                      iteracion.add(x);
+                  }
+                    if (("ESTRATEGIA_SUBTIPO").equals(titulo)) {
+                        tituloList.add(titulo);
+                        System.out.println(titulo);
+                        iteracion.add(x);
+                    }
+                    if (("FECHA_INICIO_ESTRATEGIA").equals(titulo)) {
+                      tituloList.add(titulo);
+                      System.out.println(titulo);
+                      iteracion.add(x);
+                  }
+
+                    if (("FECHA_FIN_ESTRATEGIA").equals(titulo)) {
+                        tituloList.add(titulo);
+                        System.out.println(titulo);
+                        iteracion.add(x);
+                    }
+                    if (("FECHA_INICIO_ESTRATEGIA_ALUMNO").equals(titulo)) {
+                        tituloList.add(titulo);
+                        System.out.println(titulo);
+                        iteracion.add(x);
+                    }
+                    if (("FECHA_FIN_ESTRATEGIA_ALUMNO").equals(titulo)) {
+                        tituloList.add(titulo);
+                        System.out.println(titulo);
+                        iteracion.add(x);
+                    }
+                    
+                }
+            }
+
+            Cell documentoCell = null;
+            Cell nombreEstrategiaCell = null;
+            Cell tipoEstrategiaCell = null;
+            Cell subtipoCell = null;
+            Cell fechaInicioCell = null;
+            Cell fechaFinCell = null;
+            Cell fechaInicioAlumCell = null;
+            Cell fechaFinAlumCell = null;
+           
+            int contador = 0;
+
+            if (row.getRowNum() > 0) {
+                for (String titulo : tituloList) {
+                	
+                	 if (("NRO_DOCUMENTO").equals(titulo)) {
+                		 documentoCell = CellUtil.getCell(row, (int) iteracion.get(contador));
+                     }
+                	 if (("NOMBRE_ESTRATEGIA").equals(titulo)) {
+                		 nombreEstrategiaCell = CellUtil.getCell(row, (int) iteracion.get(contador));
+                     }
+                	 if (("TIPO_ESTRATEGIA").equals(titulo)) {
+                		 tipoEstrategiaCell = CellUtil.getCell(row, (int) iteracion.get(contador));
+                     }
+                	 if (("ESTRATEGIA_SUBTIPO").equals(titulo)) {
+                		 subtipoCell = CellUtil.getCell(row, (int) iteracion.get(contador));
+                    }
+                    if (("FECHA_INICIO_ESTRATEGIA").equals(titulo)) {
+                    	fechaInicioCell = CellUtil.getCell(row, (int) iteracion.get(contador));
+                    }
+                    if (("FECHA_FIN_ESTRATEGIA").equals(titulo)) {
+                    	fechaFinCell = CellUtil.getCell(row, (int) iteracion.get(contador));
+                    }
+                    if (("FECHA_INICIO_ESTRATEGIA_ALUMNO").equals(titulo)) {
+                    	fechaInicioAlumCell = CellUtil.getCell(row, (int) iteracion.get(contador));
+                    }
+                    if (("FECHA_FIN_ESTRATEGIA_ALUMNO").equals(titulo)) {
+                    	fechaFinAlumCell = CellUtil.getCell(row, (int) iteracion.get(contador));
+                    }
+                   
+                    contador++;
+                }
+            }
+            try {
+            	if (row.getRowNum() > 0) {
+                    System.out.println("....");
+                    
+                    String numeroDocumento;
+                    
+                    if(documentoCell.getCellType() == CellType.NUMERIC) {
+                    	numeroDocumento = String.valueOf((long)documentoCell.getNumericCellValue()) ;
+                    }else {
+                    	numeroDocumento = documentoCell.getStringCellValue();
+                    }
+                    
+                    String nombreEstrategia = nombreEstrategiaCell.getStringCellValue();
+                    String tipoEstrategia= tipoEstrategiaCell.getStringCellValue();
+                    String subtipo= subtipoCell.getStringCellValue();
+                    Date fehaInicio = fechaInicioCell.getDateCellValue();
+                    Date fechaFin= fechaFinCell.getDateCellValue();
+                    Date fechaInicioAlumno= fechaInicioAlumCell.getDateCellValue();
+                    Date fechaFinAlumno = fechaFinAlumCell.getDateCellValue();
+                    
+
+                    Boolean bol = beneficiarioRepository.existsByNumeroDocumento_NumeroDocumento(numeroDocumento);
+                    if (bol != true) {
+                  
+                    	Beneficiario ben = new Beneficiario();
+                    	ben.setNombreEstrategia(nombreEstrategia);
+                    	ben.setTipoEstrategia(tipoEstrategia);
+                    	ben.setEstrategiaSubtipo(subtipo);
+                    	ben.setFechaInicioEstrategia(fehaInicio);
+                    	ben.setFechaFinEstrategia(fechaFin);
+                    	ben.setFechaInicioEstrategiaAlumno(fechaInicioAlumno);
+                    	ben.setFechaFinEstrategiaAlumno(fechaFinAlumno); 
+                    	Estudiante unEstudiante = estudianteRepository.findByNumeroDocumento(numeroDocumento);
+                    	ben.setNumeroDocumento(unEstudiante);
+   				 		beneficiarioRepository.save(ben); 
+                        System.out.println("AAAAAAAAAAAAAAAAA");
+                    } else {
+
+                        Beneficiario ben = beneficiarioRepository.findByNumeroDocumento(numeroDocumento);
+                    	ben.setNombreEstrategia(nombreEstrategia);
+                    	ben.setTipoEstrategia(tipoEstrategia);
+                    	ben.setEstrategiaSubtipo(subtipo);
+                    	ben.setFechaInicioEstrategia(fehaInicio);
+                    	ben.setFechaFinEstrategia(fechaFin);
+                    	ben.setFechaInicioEstrategiaAlumno(fechaInicioAlumno);
+                    	ben.setFechaFinEstrategiaAlumno(fechaFinAlumno);
+                    	Estudiante unEstudiante = estudianteRepository.findByNumeroDocumento(numeroDocumento);
+                    	ben.setNumeroDocumento(unEstudiante);
+   				 		beneficiarioRepository.save(ben); 
+
+   				 
+                    }
+
+                }
+            	System.out.println("todo bien");
+				
+			} catch (Exception e) {
+				System.out.println(e);
+			}
+            
+            
+        }
+    }
 
     @Override
     public ResponseEntity<?> saveExcel(MultipartFile files, String type) throws IOException, InvalidFormatException {
@@ -1124,9 +1129,9 @@ public class ExcelImpl implements ExcelService {
                     this.guardarDataEstudiantes(sheet);
                     break;
 //                    
-//                case "beneficiarios":
-//                    this.guardarDataBeneficiarios(sheet);
-//                    break;
+                case "beneficiarios":
+                    this.guardarDataBeneficiarios(sheet);
+                    break;
             }
         }
         return new ResponseEntity<Object>("Archivo creado correctamente", HttpStatus.CREATED);

@@ -32,13 +32,12 @@ public class Facial implements Serializable {
 	private Long id;
 	
 
-	@Column(name = "est_foto")
+	@Column(name = "foto_estudiante")
     private Blob foto;
 	
-	@OneToOne(fetch = FetchType.EAGER, optional = false)
-	@JoinColumn(name = "id_estudiante", nullable = false)
-	private Estudiante idEstudiante;
-	
+	@ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name = "id_estudiante", referencedColumnName = "numero_Documento")
+	private Estudiante numeroDocumento;
 	
 	
 }

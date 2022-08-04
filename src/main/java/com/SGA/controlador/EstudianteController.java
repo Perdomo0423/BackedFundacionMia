@@ -20,6 +20,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.SGA.entidades.Contratista;
 import com.SGA.entidades.Estudiante;
 import com.SGA.servicio.EstudianteService;
 
@@ -87,17 +88,11 @@ public class EstudianteController {
 		return ResponseEntity.ok().build();
 	}
 
-	@GetMapping
-	public List<Estudiante>readAll(){
-	
-		List<Estudiante> estudiante = StreamSupport 
-				.stream(estudianteService.findAll().spliterator(), false)
-				.collect(Collectors.toList()); 
-				
-		return estudiante;
-	
-	}
-
+	 @GetMapping("/listar")
+	    public List<Estudiante> all() {
+	        return estudianteService.all();
+	    }
+	 
 	@GetMapping(value ={"/genero/{id_sede}/{est_Genero}"})
 	public List<Estudiante> listarGenero(@PathVariable("est_Genero") String est_genero, @PathVariable("id_sede") Long id_sede){
 		return estudianteService.listarGenero(est_genero, id_sede);

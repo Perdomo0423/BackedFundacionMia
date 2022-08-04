@@ -14,12 +14,9 @@ import java.util.List;
 
 @Repository
 public interface BeneficiarioRepository extends JpaRepository<Beneficiario, Long>{
-//	boolean existsByUnEstudianteNumeroDocumento(long numeroDocumento);
-//	Beneficiario findByUnEstudianteNumeroDocumento(long numeroDocumento);
 	
-	
-	Boolean existsByNumeroDocumento(long documento);
-	Beneficiario findByNumeroDocumento(long documento);
+	Boolean existsByNumeroDocumento_NumeroDocumento(String documento);
+	Beneficiario findByNumeroDocumento(String documento);
 
 
 	@Query(value = "select * from beneficiario where ben_fecha_actual between :fecha1 and :fecha2", nativeQuery = true)

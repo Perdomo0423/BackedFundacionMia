@@ -7,11 +7,13 @@ import java.util.Optional;
 import com.SGA.dto.StandarEstudianteDto;
 import org.springframework.stereotype.Service;
 
+import com.SGA.entidades.Contratista;
 import com.SGA.entidades.Estudiante;
  
 
 @Service
 public interface EstudianteService{ 
+	public List<Estudiante> all();
 	public Iterable<Estudiante> findAll();//Colección en forma de iterable
 	
 	public Optional<Estudiante> findById(Long id); //Que nos encuentre la persona por medio del id

@@ -10,6 +10,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
@@ -19,21 +20,14 @@ public class Huella {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
-	@Column(name="nombre")
-	private String nombre;
 	
-	@Column(name="huella", length = 10000)
+	@Column(name="huella_estudiante", length = 100000)
 	private  Blob huella;
-
-	public Huella(String nombre,  Blob huella) {
-		super();
-		this.nombre = nombre;
-		this.huella = huella;
-	}
 	
-	@OneToOne(fetch = FetchType.EAGER, optional = false)
-	@JoinColumn(name = "id_estudiante", nullable = false)
-	private Estudiante idEstudiante;
+	
+	@ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name = "id_estudiante", referencedColumnName = "numero_Documento")
+	private Estudiante numeroDocumento;
 	
 	public Huella() {
 		// TODO Auto-generated constructor stub
@@ -47,13 +41,6 @@ public class Huella {
 		this.id = id;
 	}
 
-	public String getNombre() {
-		return nombre;
-	}
-
-	public void setNombre(String nombre) {
-		this.nombre = nombre;
-	}
 
 	public  Blob getHuella() {
 		return huella;
